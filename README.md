@@ -1,13 +1,16 @@
 # HMO.InnerVoice WebMCP Challenge Prototype
 
-**HMO.InnerVoice - an agent-accessible social knowledge experience powered by WebMCP**
+HMO.InnerVoice is a platform focused on human voice, awareness, social issues, understanding, perspectives, evidence and positive social change.
 
-Official HMO.InnerVoice website: https://hmoinnervoice.com
+This repository contains the public OpenAI WebMCP Challenge prototype. It is not the full HMO.InnerVoice production platform. The prototype demonstrates one topic within the broader HMO.InnerVoice direction:
 
-This public OpenAI Challenge prototype demonstrates how a social knowledge website can expose structured, evidence-aware capabilities directly to an AI agent through a WebMCP-capable browser.
+**Diverse Abilities, Meaningful Contributions**
 
+Human ability does not take a single form. People experience, understand and engage with the world in different ways. This prototype explores how people with diverse physical, sensory, cognitive, neurological and communication abilities contribute to communities and societies.
 
-## Demo Flow
+## Challenge Demo
+
+The project demonstrates a human-readable website that also exposes structured capabilities to an AI agent through browser-native WebMCP.
 
 ```text
 Browser
@@ -25,25 +28,27 @@ WebMCP
 AI agent
 ```
 
-The primary integration is browser-native WebMCP. When `app/index.html` is opened in a WebMCP-capable in-app browser, `app/script.js` registers HMO.InnerVoice tools with `document.modelContext.registerTool()`.
+The primary challenge path is the webpage. When `app/index.html` is opened in a WebMCP-capable in-app browser, `app/script.js` registers HMO.InnerVoice tools with `document.modelContext.registerTool()`.
 
 ## What This Prototype Shows
 
-The topic for this challenge demo is **Different Abilities, Shared Contributions**.
+The current demonstration topic is inclusive employment and participation.
 
 The public dataset includes:
 
 - 12 public demo entities
 - 14 contribution categories
 - 19 public evidence sources
-- Multiple perspectives across lived experience, employers, service providers, research, policy, arts, technology, and community participation
+- Multiple perspectives across lived experience, employers, service providers, research, policy, arts, technology and community participation
 - Transparent HMO.InnerVoice selection rationale for every entity
 
-Beehive labels and services in this repository are illustrative challenge-demo metadata only. They do not state or imply real commercial, contractual, provider, partnership, or endorsement relationships.
+This is not a ranking, certification or endorsement system. HMO.InnerVoice highlights organisations and practices for editorial and educational reasons, based on public demo data.
+
+Beehive labels and services in this repository are illustrative challenge-demo metadata only. They do not state or imply real commercial, contractual, provider, partnership or endorsement relationships.
 
 ## WebMCP Tools
 
-The webpage registers these tools:
+The webpage registers six browser WebMCP tools:
 
 - `discover_selected`
 - `explain_selection`
@@ -51,6 +56,8 @@ The webpage registers these tools:
 - `explore_perspectives`
 - `explore_evidence`
 - `identify_gaps`
+
+`explain_selection` operates on the organisation currently selected by the user in the live webpage. It does not accept an organisation name or id as fallback input, and it does not default to Accenture or the first entity. If no organisation is selected, it returns a structured `NO_ORGANISATION_SELECTED` response.
 
 The `webmcp/` directory also keeps a stdio MCP compatibility server for local agent/client experiments, but the challenge demo story is the browser WebMCP path above.
 
@@ -69,7 +76,7 @@ Open:
 http://localhost:8080
 ```
 
-`npm run dev` serves the HMO.InnerVoice webpage and public demo data.
+`npm run dev` serves the HMO.InnerVoice webpage, public demo data and WebMCP-related documentation files.
 
 ## Build
 
@@ -91,25 +98,30 @@ The test suite validates:
 - Dataset shape and public-source URLs
 - Beehive demo disclosure rules
 - Browser-side WebMCP registration
+- Explicit organisation selection state
+- `explain_selection` no-fallback behavior
 - Tool names and demo-question coverage
 - Static build inputs
 - Public-demo security expectations
+- Demo and judge-guide documentation
 
-## ChatGPT Desktop / In-App Browser Demo
+## ChatGPT In-App Browser Testing
 
 To test the intended WebMCP path:
 
-1. Install and open the ChatGPT desktop app.
-2. Start this project with `npm run dev`.
-3. Open `http://localhost:8080` in ChatGPT's in-app browser.
-4. Ask the agent about HMO.InnerVoice, for example:
-   - "Based on HMO.InnerVoice, who is making a difference in inclusive employment?"
-   - "Explain why RNIB was selected and what evidence supports it."
-   - "Compare approaches to accessibility and participation."
-   - "What perspectives are represented?"
-   - "Where are the gaps in this public demo dataset?"
+1. Open the HMO.InnerVoice site in ChatGPT's in-app browser or another supported WebMCP-capable browser.
+2. Confirm the site tools are available.
+3. Select an organisation card using the `Select` button.
+4. Ask: "Explain this organisation in simpler terms."
+5. Confirm the response matches the selected organisation and does not fall back to the first record.
 
-In a WebMCP-capable browser, the page exposes the registered tools to the AI agent through `document.modelContext.registerTool()`.
+Additional judge-testing prompts are in `docs/JUDGE_TESTING_GUIDE.md`.
+
+## Demo Materials
+
+- `docs/DEMO_SCRIPT.md` - final short video demo script
+- `docs/JUDGE_TESTING_GUIDE.md` - concise judge testing instructions
+- `docs/CHALLENGE_SUBMISSION_NOTES.md` - project distinction, judging criteria crosswalk and recording checklist
 
 ## Project Structure
 
@@ -117,6 +129,7 @@ In a WebMCP-capable browser, the page exposes the registered tools to the AI age
 hmo_webmcp/
 |-- app/                  # WebMCP-enabled public webpage
 |-- data/                 # Public challenge dataset and data model
+|-- docs/                 # Demo script, judge guide and submission notes
 |-- scripts/build.js      # Static build script
 |-- webmcp/               # Tool schemas, shared logic, and stdio MCP compatibility server
 |-- app-server.js         # Local static server
@@ -127,15 +140,16 @@ hmo_webmcp/
 
 ## Public / Private Boundary
 
-This repository is safe for a public challenge demo because it uses public sources, static JSON data, and demo-only capability logic.
+This repository is intended to be safe for a public challenge demo because it uses public sources, static JSON data and demo-only capability logic.
 
 It does not contain:
 
 - Production HMO.InnerVoice backend code
+- Private HMO.InnerVoice architecture
 - Production Beehive infrastructure
 - Real credentials or API keys
 - Private user data
 - Confidential partner/provider data
-- Proprietary ranking, curation, or knowledge graph infrastructure
+- Proprietary ranking, curation or knowledge graph infrastructure
 
 The implementation intentionally uses small rule-based matching over public demo JSON so the agent-accessible pattern is visible without exposing private platform logic.

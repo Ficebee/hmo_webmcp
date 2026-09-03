@@ -391,7 +391,7 @@ try {
 log.section('6. DOCUMENTATION VALIDATION');
 
 const docFiles = [
-    { path: 'README.md', required: ['agent-accessible social knowledge experience powered by WebMCP', 'document.modelContext.registerTool()', 'https://hmoinnervoice.com'] },
+    { path: 'README.md', required: ['Diverse Abilities, Meaningful Contributions', 'document.modelContext.registerTool()', 'NO_ORGANISATION_SELECTED'] },
     { path: 'app/README.md', required: ['Frontend', 'WebMCP', 'challenge-demo'] },
     { path: 'webmcp/README.md', required: ['document.modelContext.registerTool()', 'discover_selected', 'Beehive challenge-demo'] },
     { path: 'webmcp/AGENT_INTEGRATION.md', required: ['WebMCP', 'document.modelContext.registerTool()', 'beehiveDemo'] },
