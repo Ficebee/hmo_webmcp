@@ -336,6 +336,15 @@ section:nth-child(even) {
     transform: translateY(-6px);
 }
 
+.entity-card-selected {
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 0 3px rgba(45, 93, 123, 0.16), var(--shadow-soft);
+}
+
+.entity-card-selected .entity-card-header {
+    background: linear-gradient(135deg, rgba(45, 93, 123, 0.14) 0%, var(--accent-light) 100%);
+}
+
 .entity-card-header {
     padding: var(--spacing-lg);
     background: linear-gradient(135deg, var(--accent-light) 0%, transparent 100%);
@@ -417,6 +426,10 @@ section:nth-child(even) {
     padding: var(--spacing-md) var(--spacing-lg);
     background-color: var(--bg-tertiary);
     border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
 }
 
 .entity-link {
@@ -433,6 +446,34 @@ section:nth-child(even) {
 
 .entity-card:hover .entity-link:after {
     transform: translateX(4px);
+}
+
+.entity-select-button {
+    appearance: none;
+    border: 1px solid var(--primary-accent);
+    background-color: var(--bg-primary);
+    color: var(--primary-accent);
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-family-body);
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1;
+    min-width: 84px;
+    padding: 0.7rem 0.9rem;
+    transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.entity-select-button:hover,
+.entity-select-button:focus-visible {
+    background-color: var(--primary-accent);
+    color: white;
+    outline: none;
+}
+
+.entity-card-selected .entity-select-button {
+    background-color: var(--primary-accent);
+    color: white;
 }
 
 /* Why Matter Section */

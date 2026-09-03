@@ -99,6 +99,10 @@ function populateFeaturedEntities() {
 function createEntityCard(entity) {
     const card = document.createElement('div');
     card.className = 'entity-card';
+    card.dataset.entityId = entity.id;
+    if (entity.id === selectedEntityId) {
+        card.classList.add('entity-card-selected');
+    }
 
     const beehiveStatus = entity.beehiveProviderStatus === 'selected'
         ? '<div class="entity-beehive"><span class="entity-beehive-badge">✓ Demo Beehive Example</span></div>'
@@ -126,6 +130,9 @@ function createEntityCard(entity) {
       ${beehiveStatus}
     </div>
     <div class="entity-card-footer">
+      <button class="entity-select-button" type="button" aria-pressed="${entity.id === selectedEntityId}" onclick="selectEntityForAgent(event, '${entity.id}')">
+        ${entity.id === selectedEntityId ? 'Selected' : 'Select'}
+      </button>
       <a href="#" class="entity-link" onclick="viewEntityDetails(event, '${entity.id}')">View Details</a>
     </div>
   `;
@@ -192,17 +199,18 @@ function viewEntityDetails(event, entityId) {
         return;
     }
 
-    // For now, show alert with entity information
-    // In full implementation, this would navigate to a detail page
     showEntityModal(entity);
+}
+
+function selectEntityForAgent(event, entityId) {
+    event.preventDefault();
+    setSelectedEntity(entityId);
 }
 
 /**
  * Show entity details in a modal
  */
 function showEntityModal(entity) {
-    setSelectedEntity(entity.id);
-
     const modal = document.createElement('div');
     modal.style.cssText = `
     position: fixed;
@@ -301,16 +309,30 @@ function showEntityModal(entity) {
 
 function setSelectedEntity(entityId) {
     selectedEntityId = entityId || null;
+    updateSelectedEntityUI();
 }
 
 function clearSelectedEntity() {
     selectedEntityId = null;
+    updateSelectedEntityUI();
 }
 
 function closeEntityModal(element) {
     const modal = element.closest?.('[style*=position]') || element;
     modal?.remove();
-    clearSelectedEntity();
+}
+
+function updateSelectedEntityUI() {
+    const cards = document.querySelectorAll?.('.entity-card') || [];
+    cards.forEach(card => {
+        const isSelected = card.dataset.entityId === selectedEntityId;
+        card.classList.toggle('entity-card-selected', isSelected);
+        const button = card.querySelector('.entity-select-button');
+        if (button) {
+            button.textContent = isSelected ? 'Selected' : 'Select';
+            button.setAttribute('aria-pressed', String(isSelected));
+        }
+    });
 }
 
 /**

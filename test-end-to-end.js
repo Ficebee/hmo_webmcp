@@ -239,6 +239,8 @@ try {
     testResult(cssContent.includes('--primary-dark'), 'CSS variables present');
     testResult(cssContent.includes('nav'), 'Navigation styling present');
     testResult(jsContentIncludesModal(cssContent), 'Modal support present');
+    testResult(cssContent.includes('.entity-card-selected'), 'Selected organisation styling present');
+    testResult(cssContent.includes('.entity-select-button'), 'Select organisation button styling present');
     testResult(cssContent.includes('@media'), 'Responsive design present');
 
     const size = cssContent.length;
@@ -271,7 +273,11 @@ try {
         ? jsContent.slice(explainSelectionStart, explainSelectionEnd)
         : '';
     testResult(jsContent.includes('let selectedEntityId = null'), 'UI and WebMCP share selected entity state');
-    testResult(jsContent.includes('setSelectedEntity(entity.id)'), 'UI detail selection updates shared state');
+    testResult(jsContent.includes('function selectEntityForAgent'), 'Explicit organisation selection handler present');
+    testResult(jsContent.includes('onclick="selectEntityForAgent'), 'Organisation cards expose explicit Select action');
+    testResult(jsContent.includes('onclick="viewEntityDetails'), 'View Details remains separate from selection');
+    testResult(!getFunctionBody(jsContent, 'showEntityModal').includes('setSelectedEntity'), 'View Details does not establish selection');
+    testResult(jsContent.includes('function updateSelectedEntityUI()'), 'Selected organisation has visible UI feedback');
     testResult(jsContent.includes('function getSelectedEntity()'), 'WebMCP can read selected entity state');
     testResult(explainSelectionTool.includes('execute: async () => explainSelection()'), 'explain_selection uses current UI selection');
     testResult(!explainSelectionTool.includes('entityId'), 'explain_selection does not accept entityId fallback input');
@@ -569,6 +575,29 @@ function jsContentIncludesModal(cssContent) {
     } catch {
         return false;
     }
+}
+
+function getFunctionBody(source, functionName) {
+    const start = source.indexOf(`function ${functionName}`);
+    if (start < 0) {
+        return '';
+    }
+
+    const bodyStart = source.indexOf('{', start);
+    if (bodyStart < 0) {
+        return '';
+    }
+
+    let depth = 0;
+    for (let i = bodyStart; i < source.length; i++) {
+        if (source[i] === '{') depth++;
+        if (source[i] === '}') depth--;
+        if (depth === 0) {
+            return source.slice(bodyStart, i + 1);
+        }
+    }
+
+    return '';
 }
 
 // ============================================================================
