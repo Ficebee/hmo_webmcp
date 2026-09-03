@@ -216,8 +216,12 @@ try {
     const htmlContent = fs.readFileSync(htmlPath, 'utf8');
 
     testResult(htmlContent.includes('<title>'), 'HTML has title tag');
-    testResult(htmlContent.includes('Different Abilities'), 'Hero section text present');
-    testResult(htmlContent.includes('hmoinnervoice.com'), 'Official HMO.InnerVoice website linked');
+    testResult(htmlContent.includes('Diverse Abilities, Meaningful Contributions'), 'Hero section text present');
+    testResult(htmlContent.includes('Human ability does not take a single form'), 'HMO.InnerVoice topic explanation present');
+    testResult(!htmlContent.includes('An agent-accessible social knowledge experience powered by WebMCP'), 'Removed WebMCP marketing phrase from website');
+    testResult(!htmlContent.includes('Explore Below'), 'Explore Below tab removed');
+    testResult(!htmlContent.includes('Visit HMO.InnerVoice'), 'Visit HMO.InnerVoice tab removed');
+    testResult(!htmlContent.includes('<h4>Learn More</h4>'), 'Learn More footer section removed');
     testResult(htmlContent.includes('Featured Entities'), 'Featured entities section present');
     testResult(htmlContent.includes('Why This Matters'), '"Why This Matters" section present');
     testResult(htmlContent.includes('Ask an AI Agent'), 'AI Agent section present');
@@ -260,6 +264,20 @@ try {
     testResult(jsContent.includes('explore_perspectives'), 'explore_perspectives WebMCP tool present');
     testResult(jsContent.includes('explore_evidence'), 'explore_evidence WebMCP tool present');
     testResult(jsContent.includes('identify_gaps'), 'identify_gaps WebMCP tool present');
+
+    const explainSelectionStart = jsContent.indexOf("name: 'explain_selection'");
+    const explainSelectionEnd = jsContent.indexOf("name: 'explore_approaches'");
+    const explainSelectionTool = explainSelectionStart >= 0 && explainSelectionEnd > explainSelectionStart
+        ? jsContent.slice(explainSelectionStart, explainSelectionEnd)
+        : '';
+    testResult(jsContent.includes('let selectedEntityId = null'), 'UI and WebMCP share selected entity state');
+    testResult(jsContent.includes('setSelectedEntity(entity.id)'), 'UI detail selection updates shared state');
+    testResult(jsContent.includes('function getSelectedEntity()'), 'WebMCP can read selected entity state');
+    testResult(explainSelectionTool.includes('execute: async () => explainSelection()'), 'explain_selection uses current UI selection');
+    testResult(!explainSelectionTool.includes('entityId'), 'explain_selection does not accept entityId fallback input');
+    testResult(jsContent.includes('NO_ORGANISATION_SELECTED'), 'explain_selection returns structured no-selection response');
+    testResult(!jsContent.includes('entitiesData.entities[0]'), 'No first organisation fallback present');
+    testResult(!explainSelectionTool.includes('Accenture'), 'No Accenture fallback in explain_selection');
 } catch (error) {
     testResult(false, `Error reading JavaScript: ${error.message}`);
 }

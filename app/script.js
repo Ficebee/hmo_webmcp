@@ -4,6 +4,7 @@
 // Global data storage
 let entitiesData = null;
 let categoriesData = null;
+let selectedEntityId = null;
 
 // Configuration
 const CONFIG = {
@@ -200,6 +201,8 @@ function viewEntityDetails(event, entityId) {
  * Show entity details in a modal
  */
 function showEntityModal(entity) {
+    setSelectedEntity(entity.id);
+
     const modal = document.createElement('div');
     modal.style.cssText = `
     position: fixed;
@@ -247,7 +250,7 @@ function showEntityModal(entity) {
         : '';
 
     content.innerHTML = `
-    <button onclick="this.closest('[style*=position]').remove()" 
+    <button onclick="closeEntityModal(this)" 
             style="float: right; background: none; border: none; font-size: 24px; cursor: pointer; color: #999;">×</button>
     
     <h2 style="margin-top: 0; color: #1a3a3a;">${entity.name}</h2>
@@ -291,9 +294,23 @@ function showEntityModal(entity) {
     // Close modal on background click
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
-            modal.remove();
+            closeEntityModal(modal);
         }
     });
+}
+
+function setSelectedEntity(entityId) {
+    selectedEntityId = entityId || null;
+}
+
+function clearSelectedEntity() {
+    selectedEntityId = null;
+}
+
+function closeEntityModal(element) {
+    const modal = element.closest?.('[style*=position]') || element;
+    modal?.remove();
+    clearSelectedEntity();
 }
 
 /**
@@ -332,17 +349,14 @@ async function registerWebMcpTools() {
         },
         {
             name: 'explain_selection',
-            description: 'Explain why HMO.InnerVoice selected a public demo entity, including contribution summary, perspectives, evidence, and optional Beehive demo metadata.',
+            description: 'Explain the organisation currently selected by the user in the live HMO.InnerVoice webpage, including contribution summary, perspectives, evidence, and optional Beehive demo metadata.',
             inputSchema: {
                 type: 'object',
-                properties: {
-                    entityId: { type: 'string', description: 'Entity id from discover_selected.' },
-                },
-                required: ['entityId'],
+                properties: {},
                 additionalProperties: false,
             },
             annotations: { readOnlyHint: true },
-            execute: async ({ entityId }) => explainSelection({ entityId }),
+            execute: async () => explainSelection(),
         },
         {
             name: 'explore_approaches',
@@ -444,14 +458,20 @@ function discoverSelected({ query, contributionArea, limit = 8 }) {
     };
 }
 
-function explainSelection({ entityId }) {
-    const entity = getEntity(entityId);
+function explainSelection() {
+    const entity = getSelectedEntity();
     if (!entity) {
-        return { success: false, error: `Entity not found: ${entityId}` };
+        return {
+            success: false,
+            code: 'NO_ORGANISATION_SELECTED',
+            selectedEntityId: null,
+            message: 'No organisation is selected. Please select an organisation in the HMO.InnerVoice webpage, then ask again.',
+        };
     }
 
     return {
         success: true,
+        selectedEntityId: entity.id,
         entity: formatEntityDetail(entity),
         whyHighlighted: entity.selectionRationale,
         whatTheyContribute: entity.contributionSummary,
@@ -664,6 +684,14 @@ function formatBeehiveDemo(entity) {
 
 function getEntity(entityId) {
     return entitiesData?.entities.find(entity => entity.id === entityId);
+}
+
+function getSelectedEntity() {
+    if (!selectedEntityId) {
+        return null;
+    }
+
+    return getEntity(selectedEntityId) || null;
 }
 
 function summarizePatterns(entities) {
