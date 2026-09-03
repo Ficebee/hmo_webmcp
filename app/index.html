@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HMO.InnerVoice — Different Abilities, Shared Contributions</title>
+    <title>HMO.InnerVoice — WebMCP Social Knowledge Experience</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -15,7 +15,7 @@
             <div class="nav-logo">
                 <a href="/">HMO.InnerVoice</a>
             </div>
-            <div class="nav-subtitle">Social-impact knowledge for AI agents</div>
+            <div class="nav-subtitle">An agent-accessible social knowledge experience powered by WebMCP</div>
         </div>
     </nav>
 
@@ -23,10 +23,12 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Different Abilities, Shared Contributions</h1>
-            <p class="hero-subtitle">Discover the people, organisations and institutions helping create a more inclusive
-                society—and explore what we can learn from their work.</p>
+            <p class="hero-subtitle">HMO.InnerVoice is an agent-accessible social knowledge experience powered by
+                WebMCP. Discover the people, organisations and institutions helping create a more inclusive
+                society, and explore what we can learn from their work.</p>
             <div class="hero-cta">
                 <button class="btn btn-primary" onclick="scrollToExplore()">Explore Below</button>
+                <a class="btn btn-secondary" href="https://hmoinnervoice.com" target="_blank" rel="noopener">Visit HMO.InnerVoice</a>
             </div>
         </div>
     </section>
@@ -106,7 +108,7 @@
             <h2>Ask an AI Agent</h2>
             <div class="agent-content">
                 <div class="agent-text">
-                    <h3>HMO.InnerVoice Knows More Than What's Shown Here</h3>
+                    <h3>Browser-Native WebMCP Tools</h3>
                     <p>This page shows only a selection of featured organisations. HMO.InnerVoice maintains a
                         comprehensive knowledge base about social-impact work, organisations, evidence, and
                         perspectives.</p>
@@ -122,12 +124,13 @@
                     </ul>
 
                     <h4>How It Works</h4>
-                    <p>HMO.InnerVoice exposes its knowledge through WebMCP (Model Context Protocol). This means:</p>
+                    <p>When this webpage is opened in a WebMCP-capable in-app browser, it registers HMO.InnerVoice
+                        tools with <code>document.modelContext.registerTool()</code>. This means:</p>
                     <ul class="how-it-works">
                         <li><strong>Your AI agent doesn't need to be owned by HMO.InnerVoice.</strong> You can use
                             ChatGPT, Claude, or any compatible agent.</li>
                         <li><strong>The AI agent accesses HMO.InnerVoice's capabilities as tools</strong> through a
-                            standard interface.</li>
+                            standard browser-native WebMCP interface.</li>
                         <li><strong>You get the knowledge + insight of HMO.InnerVoice</strong> combined with the
                             conversational ability of your preferred AI agent.</li>
                     </ul>
@@ -223,11 +226,12 @@
                     <h4>About This Challenge</h4>
                     <p>This is a challenge demonstrator showcasing how HMO.InnerVoice exposes curated knowledge through
                         WebMCP. It uses public data only and does not contain proprietary HMO.InnerVoice or Beehive
-                        infrastructure.</p>
+                        infrastructure. Beehive labels in this demo are illustrative challenge metadata only.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Learn More</h4>
                     <ul>
+                        <li><a href="https://hmoinnervoice.com" target="_blank" rel="noopener">hmoinnervoice.com</a></li>
                         <li><a href="README.md">Project README</a></li>
                         <li><a href="webmcp/README.md">WebMCP Server Documentation</a></li>
                         <li><a href="data/DATA_MODEL.md">Data Model</a></li>

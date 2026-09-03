@@ -57,6 +57,7 @@ const requiredFiles = [
     'app/script.js',
     'app/README.md',
     'app-server.js',
+    'scripts/build.js',
     'webmcp/server.js',
     'webmcp/config.js',
     'webmcp/README.md',
@@ -216,6 +217,7 @@ try {
 
     testResult(htmlContent.includes('<title>'), 'HTML has title tag');
     testResult(htmlContent.includes('Different Abilities'), 'Hero section text present');
+    testResult(htmlContent.includes('hmoinnervoice.com'), 'Official HMO.InnerVoice website linked');
     testResult(htmlContent.includes('Featured Entities'), 'Featured entities section present');
     testResult(htmlContent.includes('Why This Matters'), '"Why This Matters" section present');
     testResult(htmlContent.includes('Ask an AI Agent'), 'AI Agent section present');
@@ -251,6 +253,13 @@ try {
     testResult(jsContent.includes('populateFeaturedEntities'), 'populateFeaturedEntities() present');
     testResult(jsContent.includes('showEntityModal'), 'showEntityModal() present');
     testResult(jsContent.includes('fetch'), 'Fetch API used');
+    testResult(jsContent.includes('document.modelContext?.registerTool'), 'WebMCP browser registration present');
+    testResult(jsContent.includes('discover_selected'), 'discover_selected WebMCP tool present');
+    testResult(jsContent.includes('explain_selection'), 'explain_selection WebMCP tool present');
+    testResult(jsContent.includes('explore_approaches'), 'explore_approaches WebMCP tool present');
+    testResult(jsContent.includes('explore_perspectives'), 'explore_perspectives WebMCP tool present');
+    testResult(jsContent.includes('explore_evidence'), 'explore_evidence WebMCP tool present');
+    testResult(jsContent.includes('identify_gaps'), 'identify_gaps WebMCP tool present');
 } catch (error) {
     testResult(false, `Error reading JavaScript: ${error.message}`);
 }
@@ -343,7 +352,9 @@ try {
     const pkg = JSON.parse(pkgContent);
 
     testResult(pkg.scripts && pkg.scripts.start, 'npm start script defined');
-    testResult(pkg.scripts && pkg.scripts['app'], 'npm run app script defined');
+    testResult(pkg.scripts && pkg.scripts.dev, 'npm run dev script defined');
+    testResult(pkg.scripts && pkg.scripts.build, 'npm run build script defined');
+    testResult(pkg.scripts && pkg.scripts['mcp:stdio'], 'stdio MCP compatibility script defined');
     testResult(pkg.dependencies && pkg.dependencies['@modelcontextprotocol/sdk'], 'MCP SDK dependency present');
 } catch (error) {
     testResult(false, `Error reading package.json: ${error.message}`);
@@ -356,9 +367,10 @@ try {
 log.section('6. DOCUMENTATION VALIDATION');
 
 const docFiles = [
+    { path: 'README.md', required: ['agent-accessible social knowledge experience powered by WebMCP', 'document.modelContext.registerTool()', 'https://hmoinnervoice.com'] },
     { path: 'app/README.md', required: ['Frontend', 'WebMCP', 'challenge-demo'] },
-    { path: 'webmcp/README.md', required: ['WebMCP', 'demo', 'Beehive challenge-demo'] },
-    { path: 'webmcp/AGENT_INTEGRATION.md', required: ['WebMCP', 'beehive_demo'] },
+    { path: 'webmcp/README.md', required: ['document.modelContext.registerTool()', 'discover_selected', 'Beehive challenge-demo'] },
+    { path: 'webmcp/AGENT_INTEGRATION.md', required: ['WebMCP', 'document.modelContext.registerTool()', 'beehiveDemo'] },
     { path: 'data/DATA_MODEL.md', required: ['Entity Schema', 'BEEHIVE DEMO METADATA'] }
 ];
 
@@ -403,19 +415,20 @@ try {
         fs.readFileSync('webmcp/README.md', 'utf8'),
         fs.readFileSync('webmcp/schemas/tools.js', 'utf8'),
         fs.readFileSync('data/DATA_MODEL.md', 'utf8'),
+        fs.readFileSync('app/script.js', 'utf8'),
     ].join('\n');
 } catch (error) {
     log.warning(`Cannot read WebMCP docs/tool schemas`);
 }
 
 const capabilityTerms = [
-    'search_hmo_knowledge',
-    'search_hmo_knowledge',
-    'get_entity_insight',
-    'compare_approaches',
-    'get_entity_insight',
+    'discover_selected',
+    'discover_selected',
+    'explain_selection',
+    'explore_approaches',
+    'explain_selection',
     'explore_perspectives',
-    'limitation',
+    'identify_gaps',
     'explore_evidence',
     'selectionRationale',
     'beehiveDemoDisclosure',

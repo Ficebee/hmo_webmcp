@@ -1,4 +1,4 @@
-// Simple HTTP Server for HMO.InnerVoice Frontend
+// Simple HTTP Server for HMO.InnerVoice WebMCP Frontend
 // Run: node app-server.js
 // Then open: http://localhost:8080
 
@@ -12,6 +12,12 @@ const __dirname = path.dirname(__filename);
 
 const PORT = process.env.PORT || 8080;
 const APP_DIR = path.join(__dirname, 'app');
+const PUBLIC_ROOTS = {
+    app: APP_DIR,
+    data: path.join(__dirname, 'data'),
+    webmcp: path.join(__dirname, 'webmcp'),
+    root: __dirname,
+};
 
 // MIME types
 const mimeTypes = {
@@ -31,11 +37,12 @@ const server = http.createServer((req, res) => {
     // Log request
     console.log(`${req.method} ${req.url}`);
 
-    // Root path redirects to index.html
-    let filePath = req.url === '/' ? '/index.html' : req.url;
-
-    // Serve from app directory
-    filePath = path.join(APP_DIR, filePath);
+    const filePath = resolvePublicPath(req.url);
+    if (!filePath) {
+        res.writeHead(403, { 'Content-Type': 'text/html' });
+        res.end('<h1>403 Forbidden</h1><p>Requested path is outside the public demo files.</p>');
+        return;
+    }
 
     // Check if file exists
     if (!fs.existsSync(filePath)) {
@@ -118,3 +125,31 @@ server.on('error', (err) => {
     }
     process.exit(1);
 });
+
+function resolvePublicPath(requestUrl) {
+    const url = new URL(requestUrl, `http://localhost:${PORT}`);
+    const pathname = decodeURIComponent(url.pathname);
+
+    let root = PUBLIC_ROOTS.app;
+    let relativePath = pathname === '/' ? 'index.html' : pathname.slice(1);
+
+    if (pathname.startsWith('/data/')) {
+        root = PUBLIC_ROOTS.data;
+        relativePath = pathname.replace(/^\/data\//, '');
+    } else if (pathname.startsWith('/webmcp/')) {
+        root = PUBLIC_ROOTS.webmcp;
+        relativePath = pathname.replace(/^\/webmcp\//, '');
+    } else if (pathname === '/README.md') {
+        root = PUBLIC_ROOTS.root;
+        relativePath = 'README.md';
+    }
+
+    const resolved = path.resolve(root, relativePath);
+    const allowedRoot = path.resolve(root);
+
+    if (resolved !== allowedRoot && !resolved.startsWith(allowedRoot + path.sep)) {
+        return null;
+    }
+
+    return resolved;
+}

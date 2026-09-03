@@ -1,14 +1,16 @@
 {
     "name": "hmo-innervoice-webmcp",
     "version": "0.1.0",
-    "description": "HMO.InnerVoice WebMCP Challenge MVP - Curated knowledge platform for AI agents",
+    "description": "HMO.InnerVoice — an agent-accessible social knowledge experience powered by WebMCP",
     "main": "webmcp/server.js",
     "type": "module",
     "scripts": {
-        "start": "node webmcp/server.js",
-        "dev": "node --watch webmcp/server.js",
+        "start": "node app-server.js",
+        "dev": "node app-server.js",
+        "build": "node scripts/build.js",
         "app": "node app-server.js",
-        "app-dev": "node --watch app-server.js",
+        "app-dev": "node app-server.js",
+        "mcp:stdio": "node webmcp/server.js",
         "test": "node test-end-to-end.js"
     },
     "keywords": [
@@ -27,6 +29,6 @@
         "@modelcontextprotocol/sdk": "1.30.0"
     },
     "engines": {
-        "node": ">=18.0.0"
+        "node": ">=20.0.0"
     }
 }

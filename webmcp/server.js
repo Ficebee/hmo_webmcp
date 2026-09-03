@@ -45,7 +45,7 @@ let categoriesData = null;
 try {
     const entitiesContent = fs.readFileSync(config.dataPath, 'utf-8');
     entitiesData = JSON.parse(entitiesContent);
-    console.log(`✓ Loaded ${entitiesData.entities.length} entities from ${config.dataPath}`);
+    console.error(`Loaded ${entitiesData.entities.length} entities from ${config.dataPath}`);
 } catch (error) {
     console.error(`✗ Failed to load entities data: ${error.message}`);
     process.exit(1);
@@ -54,7 +54,7 @@ try {
 try {
     const categoriesContent = fs.readFileSync(config.categoriesPath, 'utf-8');
     categoriesData = JSON.parse(categoriesContent);
-    console.log(`✓ Loaded ${categoriesData.contributionCategories.length} contribution categories`);
+    console.error(`Loaded ${categoriesData.contributionCategories.length} contribution categories`);
 } catch (error) {
     console.error(`✗ Failed to load categories data: ${error.message}`);
     process.exit(1);
@@ -149,9 +149,9 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 async function main() {
     const transport = new StdioServerTransport();
     await server.connect(transport);
-    console.log("✓ HMO.InnerVoice WebMCP Server started");
-    console.log("✓ Ready to accept tool calls from AI agents");
-    console.log(`✓ Demo mode: ${config.publicDemoMode ? 'ENABLED (public data only)' : 'DISABLED'}`);
+    console.error("HMO.InnerVoice stdio MCP compatibility server started");
+    console.error("Ready to accept tool calls from compatible MCP clients");
+    console.error(`Demo mode: ${config.publicDemoMode ? 'ENABLED (public data only)' : 'DISABLED'}`);
 }
 
 main().catch((error) => {

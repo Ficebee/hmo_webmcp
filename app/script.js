@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     populateCategories();
     populateFeaturedEntities();
     populateAttribution();
+    await registerWebMcpTools();
 });
 
 /**
@@ -307,4 +308,390 @@ function showEntityModal(entity) {
  */
 console.log('HMO.InnerVoice Frontend Loaded');
 console.log('Topic: Different Abilities, Shared Contributions');
-console.log('Access WebMCP capabilities through: webmcp/server.js');
+console.log('Access WebMCP capabilities through: document.modelContext.registerTool()');
+
+/**
+ * Register WebMCP site tools for ChatGPT's in-app browser.
+ */
+async function registerWebMcpTools() {
+    if (typeof document.modelContext?.registerTool !== 'function') {
+        console.info('WebMCP is not available in this browser. The website remains usable normally.');
+        return;
+    }
+
+    const tools = [
+        {
+            name: 'discover_selected',
+            description: 'Discover HMO.InnerVoice selected public demo entities relevant to a social issue, contribution area, destination, experience, or awareness topic.',
+            inputSchema: {
+                type: 'object',
+                properties: {
+                    query: { type: 'string', description: 'Topic or question to explore.' },
+                    contributionArea: { type: 'string', description: 'Optional contribution area filter.' },
+                    limit: { type: 'number', description: 'Maximum number of entities to return. Default 8.' },
+                },
+                required: ['query'],
+                additionalProperties: false,
+            },
+            annotations: { readOnlyHint: true },
+            execute: async ({ query, contributionArea, limit = 8 }) =>
+                discoverSelected({ query, contributionArea, limit }),
+        },
+        {
+            name: 'explain_selection',
+            description: 'Explain why HMO.InnerVoice selected a public demo entity, including contribution summary, perspectives, evidence, and optional Beehive demo metadata.',
+            inputSchema: {
+                type: 'object',
+                properties: {
+                    entityId: { type: 'string', description: 'Entity id from discover_selected.' },
+                },
+                required: ['entityId'],
+                additionalProperties: false,
+            },
+            annotations: { readOnlyHint: true },
+            execute: async ({ entityId }) => explainSelection({ entityId }),
+        },
+        {
+            name: 'explore_approaches',
+            description: 'Compare approaches used by selected public demo entities on a social issue or contribution topic.',
+            inputSchema: {
+                type: 'object',
+                properties: {
+                    topic: { type: 'string', description: 'Issue or topic to compare.' },
+                    entityIds: {
+                        type: 'array',
+                        items: { type: 'string' },
+                        description: 'Optional list of entity ids to compare.',
+                    },
+                    limit: { type: 'number', description: 'Maximum entities to compare. Default 5.' },
+                },
+                required: ['topic'],
+                additionalProperties: false,
+            },
+            annotations: { readOnlyHint: true },
+            execute: async ({ topic, entityIds, limit = 5 }) =>
+                exploreApproaches({ topic, entityIds, limit }),
+        },
+        {
+            name: 'explore_perspectives',
+            description: 'Surface stakeholder perspectives represented in the HMO.InnerVoice public demo knowledge experience.',
+            inputSchema: {
+                type: 'object',
+                properties: {
+                    topic: { type: 'string', description: 'Issue or topic to explore.' },
+                    perspectiveTypes: {
+                        type: 'array',
+                        items: { type: 'string' },
+                        description: 'Optional perspective filters such as lived experience, employer, researcher, policy, or service.',
+                    },
+                },
+                required: ['topic'],
+                additionalProperties: false,
+            },
+            annotations: { readOnlyHint: true },
+            execute: async ({ topic, perspectiveTypes }) =>
+                explorePerspectiveSet({ topic, perspectiveTypes }),
+        },
+        {
+            name: 'explore_evidence',
+            description: 'Find public evidence sources supporting claims, entities, or contribution topics in this challenge dataset.',
+            inputSchema: {
+                type: 'object',
+                properties: {
+                    query: { type: 'string', description: 'Claim, entity, or topic to find evidence for.' },
+                    entityId: { type: 'string', description: 'Optional entity id for scoped evidence.' },
+                    sourceTypes: {
+                        type: 'array',
+                        items: { type: 'string', enum: ['website', 'report', 'article', 'research', 'government', 'institution'] },
+                        description: 'Optional source type filters.',
+                    },
+                },
+                required: ['query'],
+                additionalProperties: false,
+            },
+            annotations: { readOnlyHint: true },
+            execute: async ({ query, entityId, sourceTypes }) =>
+                exploreEvidenceSet({ query, entityId, sourceTypes }),
+        },
+        {
+            name: 'identify_gaps',
+            description: 'Identify visible gaps, limits, and underrepresented areas in the public challenge dataset.',
+            inputSchema: {
+                type: 'object',
+                properties: {
+                    topic: { type: 'string', description: 'Optional issue or topic to focus the gap analysis.' },
+                },
+                additionalProperties: false,
+            },
+            annotations: { readOnlyHint: true },
+            execute: async ({ topic = 'Different Abilities, Shared Contributions' } = {}) =>
+                identifyGaps({ topic }),
+        },
+    ];
+
+    for (const tool of tools) {
+        await document.modelContext.registerTool(tool);
+    }
+
+    console.log(`Registered ${tools.length} HMO.InnerVoice WebMCP tools`);
+}
+
+function discoverSelected({ query, contributionArea, limit = 8 }) {
+    const matches = findRelevantEntities(query)
+        .filter(entity => !contributionArea || includesText(entity.contributionAreas.join(' '), contributionArea))
+        .slice(0, Number(limit) || 8);
+
+    return {
+        project: 'HMO.InnerVoice — an agent-accessible social knowledge experience powered by WebMCP',
+        officialWebsite: 'https://hmoinnervoice.com',
+        query,
+        totalMatches: matches.length,
+        entities: matches.map(formatEntitySummary),
+        note: 'This is a public OpenAI Challenge prototype using curated public demo data only.',
+    };
+}
+
+function explainSelection({ entityId }) {
+    const entity = getEntity(entityId);
+    if (!entity) {
+        return { success: false, error: `Entity not found: ${entityId}` };
+    }
+
+    return {
+        success: true,
+        entity: formatEntityDetail(entity),
+        whyHighlighted: entity.selectionRationale,
+        whatTheyContribute: entity.contributionSummary,
+        whatWeCanLearn: entity.insights,
+        perspectives: entity.perspectives,
+        evidence: entity.evidence,
+        ...(formatBeehiveDemo(entity) && { beehiveDemo: formatBeehiveDemo(entity) }),
+    };
+}
+
+function exploreApproaches({ topic, entityIds, limit = 5 }) {
+    const entities = Array.isArray(entityIds) && entityIds.length > 0
+        ? entityIds.map(getEntity).filter(Boolean)
+        : findRelevantEntities(topic).slice(0, Number(limit) || 5);
+
+    return {
+        topic,
+        compared: entities.length,
+        approaches: entities.map(entity => ({
+            id: entity.id,
+            name: entity.name,
+            approach: entity.contributionSummary,
+            distinctiveInsight: entity.insights,
+            contributionAreas: entity.contributionAreas,
+            evidenceCount: entity.evidence.length,
+        })),
+        synthesis: summarizePatterns(entities),
+        limitation: 'This compares the public challenge dataset only; it is not a complete global review.',
+    };
+}
+
+function explorePerspectiveSet({ topic, perspectiveTypes }) {
+    const entities = findRelevantEntities(topic);
+    const filters = Array.isArray(perspectiveTypes)
+        ? perspectiveTypes.map(type => normalizeText(type))
+        : [];
+    const perspectiveMap = {};
+
+    entities.forEach(entity => {
+        entity.perspectives.forEach(perspective => {
+            const normalized = normalizeText(perspective);
+            if (filters.length > 0 && !filters.some(filter => normalized.includes(filter))) {
+                return;
+            }
+
+            if (!perspectiveMap[perspective]) {
+                perspectiveMap[perspective] = [];
+            }
+
+            perspectiveMap[perspective].push({
+                id: entity.id,
+                name: entity.name,
+                insight: entity.insights,
+            });
+        });
+    });
+
+    return {
+        topic,
+        perspectivesIdentified: Object.keys(perspectiveMap).length,
+        perspectives: Object.entries(perspectiveMap).map(([perspective, representedBy]) => ({
+            perspective,
+            representedBy,
+        })),
+        limitation: 'Perspectives are drawn from public demo entities and are not exhaustive.',
+    };
+}
+
+function exploreEvidenceSet({ query, entityId, sourceTypes }) {
+    const entities = entityId ? [getEntity(entityId)].filter(Boolean) : entitiesData.entities;
+    const filters = Array.isArray(sourceTypes) ? sourceTypes : [];
+    const queryText = normalizeText(query);
+    const sources = [];
+
+    entities.forEach(entity => {
+        entity.evidence.forEach(source => {
+            const haystack = normalizeText([
+                entity.name,
+                entity.description,
+                entity.contributionSummary,
+                source.sourceTitle,
+                source.description,
+                source.sourceType,
+            ].join(' '));
+
+            if (filters.length > 0 && !filters.includes(source.sourceType)) {
+                return;
+            }
+
+            if (entityId || scoreTextMatch(haystack, queryText) > 0) {
+                sources.push({
+                    entityId: entity.id,
+                    entityName: entity.name,
+                    ...source,
+                });
+            }
+        });
+    });
+
+    return {
+        query,
+        entityId: entityId || null,
+        totalSources: sources.length,
+        sources,
+        limitation: 'Evidence is limited to public sources curated for this challenge prototype.',
+    };
+}
+
+function identifyGaps({ topic }) {
+    const entities = topic ? findRelevantEntities(topic) : entitiesData.entities;
+    const coveredAreas = new Set(entities.flatMap(entity => entity.contributionAreas));
+    const allAreas = categoriesData.contributionCategories.map(category => category.name);
+    const underrepresentedAreas = allAreas.filter(area =>
+        !Array.from(coveredAreas).some(covered => includesText(covered, area))
+    );
+    const countries = [...new Set(entities.map(entity => entity.country))];
+
+    return {
+        topic,
+        datasetSize: entities.length,
+        visibleGaps: [
+            'Static public challenge dataset, not the full HMO.InnerVoice platform.',
+            'Limited geography and sector coverage.',
+            'Public-source evidence only; no private case notes, user data, or production knowledge graph.',
+            'Experiences and destinations are represented through organisation-level public information, not personal travel or service records.',
+        ],
+        underrepresentedContributionAreas: underrepresentedAreas,
+        representedCountriesOrRegions: countries,
+        suggestedNextQuestions: [
+            'Which voices are missing from this issue?',
+            'Which evidence is strongest, and which claims need more public support?',
+            'Which approaches would need local context before adoption elsewhere?',
+        ],
+    };
+}
+
+function findRelevantEntities(query) {
+    const normalizedQuery = normalizeText(query);
+    const scored = entitiesData.entities
+        .map(entity => ({
+            entity,
+            score: scoreEntity(entity, normalizedQuery),
+        }))
+        .filter(item => item.score > 0)
+        .sort((a, b) => b.score - a.score);
+
+    return scored.length > 0
+        ? scored.map(item => item.entity)
+        : entitiesData.entities;
+}
+
+function scoreEntity(entity, normalizedQuery) {
+    const haystack = normalizeText([
+        entity.name,
+        entity.entityType,
+        entity.country,
+        entity.description,
+        entity.contributionAreas.join(' '),
+        entity.selectionRationale,
+        entity.contributionSummary,
+        entity.insights,
+        entity.perspectives.join(' '),
+        entity.tags.join(' '),
+    ].join(' '));
+
+    return scoreTextMatch(haystack, normalizedQuery);
+}
+
+function scoreTextMatch(haystack, normalizedQuery) {
+    if (!normalizedQuery) return 1;
+    const tokens = normalizedQuery.split(' ').filter(token => token.length > 2);
+    if (haystack.includes(normalizedQuery)) return tokens.length + 2;
+    return tokens.reduce((score, token) => score + (haystack.includes(token) ? 1 : 0), 0);
+}
+
+function formatEntitySummary(entity) {
+    return {
+        id: entity.id,
+        name: entity.name,
+        entityType: entity.entityType,
+        country: entity.country,
+        contributionAreas: entity.contributionAreas,
+        selectionRationale: entity.selectionRationale,
+        ...(formatBeehiveDemo(entity) && { beehiveDemo: formatBeehiveDemo(entity) }),
+    };
+}
+
+function formatEntityDetail(entity) {
+    return {
+        ...formatEntitySummary(entity),
+        website: entity.website,
+        description: entity.description,
+        contributionSummary: entity.contributionSummary,
+        insights: entity.insights,
+        lastReviewed: entity.lastReviewed,
+    };
+}
+
+function formatBeehiveDemo(entity) {
+    if (entity.beehiveProviderStatus !== 'selected') {
+        return null;
+    }
+
+    return {
+        status: 'selected',
+        services: entity.servicesInBeehive || [],
+        disclosure: entity.beehiveDemoDisclosure || CONFIG.beehiveDemoDisclosure,
+    };
+}
+
+function getEntity(entityId) {
+    return entitiesData?.entities.find(entity => entity.id === entityId);
+}
+
+function summarizePatterns(entities) {
+    if (entities.length === 0) {
+        return ['No matching entities found in the public challenge dataset.'];
+    }
+
+    const areas = [...new Set(entities.flatMap(entity => entity.contributionAreas))];
+    const countries = [...new Set(entities.map(entity => entity.country))];
+
+    return [
+        `Contribution areas represented: ${areas.join(', ')}`,
+        `Countries or regions represented: ${countries.join(', ')}`,
+        'The selected approaches combine public evidence, lived-experience perspectives, institutional action, and practical participation pathways.',
+    ];
+}
+
+function includesText(value, query) {
+    return normalizeText(value).includes(normalizeText(query));
+}
+
+function normalizeText(value) {
+    return String(value || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+}
