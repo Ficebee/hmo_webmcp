@@ -57,10 +57,10 @@ This inclusive-employment demonstration is one topic within a broader vision for
 - Six WebMCP tools are discoverable.
 - Organisation selection works through an explicit `Select` action.
 - Selected organisation is visually identifiable.
-- `explain_selection` returns the selected organisation.
+- `explain_selection` returns the selected organisation when asking "Explain this organisation in simpler terms."
 - There is no automatic fallback to the first organisation.
 - Comparison or synthesis prompt works across multiple organisations.
-- Evidence/source prompt returns source-backed information.
+- Follow-up prompts about significance, neurodivergent people and employer learning stay grounded in the selected organisation.
 - Browser/session is clean.
 - Future functionality is not represented as already implemented.
 - Existing HMO.InnerVoice context and WebMCP challenge additions are accurately distinguished.

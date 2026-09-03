@@ -65,13 +65,13 @@ Expected WebMCP behavior: `selectedEntityId` is updated in the page state.
 
 Judging criterion: WebMCP Leverage, Execution.
 
-### 1:10-1:40 - Ask About the Current Selection
+### 1:10-1:35 - Ask About the Current Selection
 
-Prompt: "Explain this organisation."
+Prompt: "Explain this organisation in simpler terms."
 
 Action: Ask ChatGPT the prompt without typing the organisation name.
 
-Narration: "Now I ask a natural question: explain this organisation. I do not tell ChatGPT which organisation I selected."
+Narration: "Now I ask a natural question: explain this organisation in simpler terms. I do not tell ChatGPT which organisation I selected."
 
 Expected WebMCP behavior: ChatGPT invokes `explain_selection`.
 
@@ -79,13 +79,41 @@ Expected visible/result: The response corresponds to the organisation selected i
 
 Judging criterion: WebMCP Leverage, Execution.
 
-### 1:40-2:20 - Demonstrate Higher-Order Capability
+### 1:35-1:55 - Follow the Selected Context
 
-Prompt: "Compare approaches to inclusive employment in this HMO.InnerVoice dataset. Focus on what can be learned, not rankings."
+Prompt: "Why is Microsoft's approach significant?"
+
+Action: Ask ChatGPT a follow-up while the same organisation remains selected.
+
+Narration: "The agent can continue from the selected page context and explain why the approach matters, while staying grounded in HMO.InnerVoice's structured information."
+
+Expected WebMCP behavior: ChatGPT uses the selected organisation context from `explain_selection`.
+
+Expected visible/result: The response explains the significance of Microsoft's disability hiring and accessibility approach without treating it as a ranking or endorsement.
+
+Judging criterion: WebMCP Leverage, Potential Impact.
+
+### 1:55-2:15 - Explain Human Impact
+
+Prompt: "How does this help neurodivergent people?"
 
 Action: Ask ChatGPT the prompt.
 
-Narration: "WebMCP becomes more valuable when the agent can work across structured content. Here, the agent compares approaches across multiple organisations and synthesizes lessons while staying grounded in the site's dataset."
+Narration: "This shows how an agent can turn structured evidence into accessible explanation for a human question."
+
+Expected WebMCP behavior: ChatGPT uses the selected organisation context and relevant perspectives.
+
+Expected visible/result: The response explains neurodiversity-related employment pathways and support in plain language, within the limits of the dataset.
+
+Judging criterion: Potential Impact, Execution.
+
+### 2:15-2:35 - Demonstrate Higher-Order Capability
+
+Prompt: "Compare this organisation with another organisation on the site."
+
+Action: Ask ChatGPT the prompt.
+
+Narration: "WebMCP becomes more valuable when the agent can work across structured content. Here, the agent moves beyond one visible card and compares approaches across the site."
 
 Expected WebMCP behavior: ChatGPT invokes `explore_approaches` or combines relevant WebMCP tool output with conversational synthesis.
 
@@ -93,21 +121,19 @@ Expected visible/result: The response compares multiple organisations, describes
 
 Judging criterion: WebMCP Leverage, Creativity & Ambition, Potential Impact.
 
-### 2:20-2:40 - Evidence and Trust
+### 2:35-2:45 - Employer Learning
 
-Prompt: "What evidence supports these approaches?"
+Prompt: "What can employers learn from this?"
 
 Action: Ask ChatGPT the prompt.
 
-Narration: "HMO.InnerVoice is designed to separate claims, evidence, perspectives and interpretation. The agent can help users inspect source-backed information instead of treating a website as a black box."
+Narration: "The final value is practical: the agent helps translate the website's curated examples into thoughtful lessons people can act on."
 
-Expected WebMCP behavior: ChatGPT invokes `explore_evidence` where appropriate.
+Expected WebMCP behavior: ChatGPT uses selected-organisation context and may draw on comparison or evidence outputs where appropriate.
 
-Expected visible/result: Response includes public source titles, source types, confidence levels and limitations.
+Expected visible/result: Response identifies transferable employer lessons, such as structured hiring pathways, accessibility, accommodations, and learning from lived experience.
 
-Judging criterion: Execution, Potential Impact.
-
-### 2:40-2:45 - Close
+Judging criterion: Potential Impact, Creativity & Ambition.
 
 On screen: Website and ChatGPT response.
 
@@ -123,3 +149,13 @@ Judging criterion: Creativity & Ambition.
 - Do not show every tool merely because it exists.
 - Do not ask ChatGPT by typing the selected organisation name during the selection test.
 - Do not use the first/default organisation for the main selection demo.
+
+## Follow-Up Prompts for Recording
+
+Use these after selecting Microsoft:
+
+1. "Explain this organisation in simpler terms."
+2. "Why is Microsoft's approach significant?"
+3. "How does this help neurodivergent people?"
+4. "Compare this organisation with another organisation on the site."
+5. "What can employers learn from this?"

@@ -24,7 +24,7 @@ Current access status: private owner testing. Make the site public only when rea
 
 User action: Select an organisation other than the first/default organisation, for example "Microsoft - Disability Hiring Initiative".
 
-Prompt: "Explain this organisation."
+Prompt: "Explain this organisation in simpler terms."
 
 Expected result:
 
@@ -35,11 +35,17 @@ Expected result:
 
 Why this matters: This proves WebMCP can work with the human user's current webpage state.
 
+Suggested follow-up prompts:
+
+- "Why is Microsoft's approach significant?"
+- "How does this help neurodivergent people?"
+- "What can employers learn from this?"
+
 ## Test 2 - Higher-Order WebMCP Capability
 
 User action: Keep the page open after reviewing the organisation cards.
 
-Prompt: "Compare approaches to inclusive employment in this HMO.InnerVoice dataset. Focus on what can be learned, not rankings."
+Prompt: "Compare this organisation with another organisation on the site."
 
 Expected result:
 
