@@ -396,7 +396,7 @@ const docFiles = [
     { path: 'webmcp/README.md', required: ['document.modelContext.registerTool()', 'discover_selected', 'Beehive challenge-demo'] },
     { path: 'webmcp/AGENT_INTEGRATION.md', required: ['WebMCP', 'document.modelContext.registerTool()', 'beehiveDemo'] },
     { path: 'data/DATA_MODEL.md', required: ['Entity Schema', 'BEEHIVE DEMO METADATA'] },
-    { path: 'docs/DEMO_SCRIPT.md', required: ['Explain this organisation in simpler terms.', 'Why is Microsoft\'s approach significant?', 'Compare this organisation with another organisation on the site.'] },
+    { path: 'docs/DEMO_SCRIPT.md', required: ['Explain this organisation.', 'Compare approaches to inclusive employment in this HMO.InnerVoice dataset.', 'What evidence supports these approaches?'] },
     { path: 'docs/JUDGE_TESTING_GUIDE.md', required: ['Judge Testing Guide', 'NO_ORGANISATION_SELECTED', 'What can employers learn from this?'] },
     { path: 'docs/CHALLENGE_SUBMISSION_NOTES.md', required: ['What We Added for the WebMCP Challenge', 'Judging Criteria Crosswalk', 'Final Recording Checklist'] }
 ];
