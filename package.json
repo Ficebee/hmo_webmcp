@@ -1,0 +1,32 @@
+{
+    "name": "hmo-innervoice-webmcp",
+    "version": "0.1.0",
+    "description": "HMO.InnerVoice WebMCP Challenge MVP - Curated knowledge platform for AI agents",
+    "main": "webmcp/server.js",
+    "type": "module",
+    "scripts": {
+        "start": "node webmcp/server.js",
+        "dev": "node --watch webmcp/server.js",
+        "app": "node app-server.js",
+        "app-dev": "node --watch app-server.js",
+        "test": "node test-end-to-end.js"
+    },
+    "keywords": [
+        "webmcp",
+        "awareness",
+        "mcp",
+        "social-impact",
+        "ai-agent",
+        "knowledge-platform",
+        "disability",
+        "inclusion"
+    ],
+    "author": "Lim Fice Bee",
+    "license": "MIT",
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "1.30.0"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    }
+}

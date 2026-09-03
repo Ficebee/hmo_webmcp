@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMO.InnerVoice — Different Abilities, Shared Contributions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/">HMO.InnerVoice</a>
+            </div>
+            <div class="nav-subtitle">Social-impact knowledge for AI agents</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Different Abilities, Shared Contributions</h1>
+            <p class="hero-subtitle">Discover the people, organisations and institutions helping create a more inclusive
+                society—and explore what we can learn from their work.</p>
+            <div class="hero-cta">
+                <button class="btn btn-primary" onclick="scrollToExplore()">Explore Below</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="intro" id="explore">
+        <div class="container">
+            <div class="intro-content">
+                <h2>About This Topic</h2>
+                <p>Different abilities are not barriers to contribution—they are different ways of contributing. This
+                    collection explores how individuals with disabilities are making meaningful impacts through
+                    employment, entrepreneurship, arts, policy, technology, research, and community participation.</p>
+                <p>The organisations and institutions featured here demonstrate sustained commitment to participation,
+                    capability, accessibility, and inclusion. Each was selected by HMO.InnerVoice because their work
+                    shows that differently-abled people are essential to society.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contribution Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2>Ways of Contribution</h2>
+            <div class="category-grid" id="categoryGrid">
+                <!-- Categories loaded from data -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Entities -->
+    <section class="featured">
+        <div class="container">
+            <h2>Featured Ecosystem Entities</h2>
+            <p class="section-subtitle">Why HMO.InnerVoice highlights these organisations</p>
+            <div class="entity-grid" id="entityGrid">
+                <!-- Entities loaded from data -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Why They Matter -->
+    <section class="why-matter">
+        <div class="container">
+            <h2>Why This Matters</h2>
+            <div class="insight-cards">
+                <div class="insight-card">
+                    <div class="insight-icon">💼</div>
+                    <h3>Inclusive Employment</h3>
+                    <p>Disabled people contribute meaningfully in the workplace when given appropriate support and
+                        accommodation. Employment is about participation, not charity.</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">💡</div>
+                    <h3>Innovation Through Diversity</h3>
+                    <p>Inclusive teams and organisations create better solutions. Accessibility innovations benefit
+                        everyone, not just disabled people.</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">🎯</div>
+                    <h3>Evidence-Based Practice</h3>
+                    <p>Effective inclusion requires research, evidence, and learning from what works. These
+                        organisations demonstrate proven approaches.</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">🌍</div>
+                    <h3>Systemic Change</h3>
+                    <p>Individual support services alone are not enough. Real inclusion requires policy reform,
+                        accessibility standards, and cultural change.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WebMCP Agent Section -->
+    <section class="agent-section">
+        <div class="container">
+            <h2>Ask an AI Agent</h2>
+            <div class="agent-content">
+                <div class="agent-text">
+                    <h3>HMO.InnerVoice Knows More Than What's Shown Here</h3>
+                    <p>This page shows only a selection of featured organisations. HMO.InnerVoice maintains a
+                        comprehensive knowledge base about social-impact work, organisations, evidence, and
+                        perspectives.</p>
+
+                    <h4>Example questions you can ask your AI agent:</h4>
+                    <ul class="example-questions">
+                        <li>"Who is making a difference in inclusive employment?"</li>
+                        <li>"What organisations are championing accessibility?"</li>
+                        <li>"What approaches are working to improve participation?"</li>
+                        <li>"What are different perspectives on this issue?"</li>
+                        <li>"Where are the gaps in current work?"</li>
+                        <li>"What evidence supports these approaches?"</li>
+                    </ul>
+
+                    <h4>How It Works</h4>
+                    <p>HMO.InnerVoice exposes its knowledge through WebMCP (Model Context Protocol). This means:</p>
+                    <ul class="how-it-works">
+                        <li><strong>Your AI agent doesn't need to be owned by HMO.InnerVoice.</strong> You can use
+                            ChatGPT, Claude, or any compatible agent.</li>
+                        <li><strong>The AI agent accesses HMO.InnerVoice's capabilities as tools</strong> through a
+                            standard interface.</li>
+                        <li><strong>You get the knowledge + insight of HMO.InnerVoice</strong> combined with the
+                            conversational ability of your preferred AI agent.</li>
+                    </ul>
+                </div>
+
+                <div class="agent-visual">
+                    <div class="flow-diagram">
+                        <div class="flow-step">
+                            <div class="flow-icon">👤</div>
+                            <div class="flow-label">You</div>
+                        </div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-step">
+                            <div class="flow-icon">🤖</div>
+                            <div class="flow-label">Your AI Agent</div>
+                        </div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-step">
+                            <div class="flow-icon">🔌</div>
+                            <div class="flow-label">WebMCP</div>
+                        </div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-step">
+                            <div class="flow-icon">🎯</div>
+                            <div class="flow-label">HMO.InnerVoice</div>
+                        </div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-step">
+                            <div class="flow-icon">📊</div>
+                            <div class="flow-label">Knowledge + Evidence</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sources -->
+    <section class="sources">
+        <div class="container">
+            <h2>Sources & Attribution</h2>
+            <p>All information and insights in HMO.InnerVoice are grounded in publicly accessible sources. Every claim
+                is backed by evidence that you can verify.</p>
+
+            <div class="source-info">
+                <h3>How We Source Information</h3>
+                <ul>
+                    <li><strong>Official websites</strong> — Directly from organisations' own websites</li>
+                    <li><strong>Research</strong> — Academic and applied research from credible institutions</li>
+                    <li><strong>Government sources</strong> — Policy documents and official statistics</li>
+                    <li><strong>Reports</strong> — Published reports from established organisations and institutions
+                    </li>
+                    <li><strong>Articles</strong> — Reputable news and analysis</li>
+                </ul>
+
+                <h3>Transparency</h3>
+                <p>When you explore any entity using HMO.InnerVoice tools, you'll see:</p>
+                <ul>
+                    <li>The exact source for each claim</li>
+                    <li>The source URL (always public and accessible)</li>
+                    <li>Confidence level (high, medium, or low)</li>
+                    <li>When the source was published or accessed</li>
+                </ul>
+
+                <h3>What We Don't Do</h3>
+                <ul>
+                    <li>❌ Make unsupported claims</li>
+                    <li>❌ Copy large portions of copyrighted material</li>
+                    <li>❌ Claim to independently verify every claim</li>
+                    <li>❌ Present AI-generated synthesis as independently verified fact</li>
+                    <li>❌ Hide the limitations of our dataset</li>
+                </ul>
+            </div>
+
+            <div class="attribution">
+                <h3>Featured Organisations & Sources</h3>
+                <div class="attribution-list" id="attributionList">
+                    <!-- Attribution loaded from data -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>HMO.InnerVoice</h4>
+                    <p>Social-impact knowledge accessible to AI agents through WebMCP.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>About This Challenge</h4>
+                    <p>This is a challenge demonstrator showcasing how HMO.InnerVoice exposes curated knowledge through
+                        WebMCP. It uses public data only and does not contain proprietary HMO.InnerVoice or Beehive
+                        infrastructure.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Learn More</h4>
+                    <ul>
+                        <li><a href="README.md">Project README</a></li>
+                        <li><a href="webmcp/README.md">WebMCP Server Documentation</a></li>
+                        <li><a href="data/DATA_MODEL.md">Data Model</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 HMO.InnerVoice Challenge. MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

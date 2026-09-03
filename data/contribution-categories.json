@@ -1,0 +1,172 @@
+{
+    "contributionCategories": [
+        {
+            "id": "inclusive_employment",
+            "name": "Inclusive Employment",
+            "description": "Programmes supporting disabled people's access to, training for, and retention in employment",
+            "examples": [
+                "Job training programmes",
+                "Supported employment services",
+                "Workplace accommodations",
+                "Mentoring and coaching",
+                "Employer partnership programs"
+            ]
+        },
+        {
+            "id": "education_training",
+            "name": "Education & Training",
+            "description": "Educational pathways and skill development for disabled people",
+            "examples": [
+                "Technical skills training",
+                "Life skills development",
+                "Academic support",
+                "Vocational training",
+                "Continuous learning programs"
+            ]
+        },
+        {
+            "id": "technology_innovation",
+            "name": "Technology & Innovation",
+            "description": "Development of assistive technology, accessible tools, and innovation-led solutions",
+            "examples": [
+                "Assistive technology design",
+                "Accessibility software",
+                "Inclusive digital solutions",
+                "Research and development",
+                "Technology partnerships"
+            ]
+        },
+        {
+            "id": "accessibility_assistive",
+            "name": "Accessibility & Assistive Technology",
+            "description": "Accessibility standards, assistive technology provision, and barrier removal",
+            "examples": [
+                "Mobility aids",
+                "Communication devices",
+                "Environmental accessibility",
+                "Accessibility audits",
+                "Standard setting and compliance"
+            ]
+        },
+        {
+            "id": "entrepreneurship",
+            "name": "Entrepreneurship",
+            "description": "Supporting disabled people to start and run their own businesses",
+            "examples": [
+                "Business training",
+                "Startup support",
+                "Microfinance and loans",
+                "Business mentoring",
+                "Enterprise development"
+            ]
+        },
+        {
+            "id": "arts_culture",
+            "name": "Arts & Culture",
+            "description": "Disabled people's participation, leadership, and contribution in arts and cultural sectors",
+            "examples": [
+                "Artist development",
+                "Exhibition opportunities",
+                "Cultural events",
+                "Creative expression",
+                "Cultural leadership"
+            ]
+        },
+        {
+            "id": "sports_recreation",
+            "name": "Sports & Recreation",
+            "description": "Sports participation, athletic competition, and recreational opportunities",
+            "examples": [
+                "Adaptive sports programs",
+                "Competitive athletics",
+                "Recreational activities",
+                "Sports coaching",
+                "Inclusive recreation facilities"
+            ]
+        },
+        {
+            "id": "community_integration",
+            "name": "Community Integration",
+            "description": "Supporting disabled people's full participation in community life",
+            "examples": [
+                "Community activities",
+                "Social inclusion programs",
+                "Volunteer opportunities",
+                "Community leadership",
+                "Civic participation"
+            ]
+        },
+        {
+            "id": "policy_advocacy",
+            "name": "Policy & Advocacy",
+            "description": "Policy reform, rights advocacy, and systemic change for disability inclusion",
+            "examples": [
+                "Rights campaigns",
+                "Policy research",
+                "Legal advocacy",
+                "Systemic reform",
+                "Government engagement"
+            ]
+        },
+        {
+            "id": "research_evidence",
+            "name": "Research & Evidence",
+            "description": "Research, evidence generation, and knowledge building about disability inclusion",
+            "examples": [
+                "Academic research",
+                "Applied research",
+                "Evidence synthesis",
+                "Lived experience research",
+                "Impact evaluation"
+            ]
+        },
+        {
+            "id": "family_support",
+            "name": "Family Support",
+            "description": "Support for families of disabled people across their lifecycle",
+            "examples": [
+                "Parenting support",
+                "Family counseling",
+                "Caregiver support",
+                "Family coordination services",
+                "Respite care"
+            ]
+        },
+        {
+            "id": "social_innovation",
+            "name": "Social Innovation",
+            "description": "Innovative approaches and new models for addressing barriers to inclusion",
+            "examples": [
+                "Co-design with disabled people",
+                "Scalable solutions",
+                "Social enterprise models",
+                "Partnership innovation",
+                "Systems thinking"
+            ]
+        },
+        {
+            "id": "workplace_accommodation",
+            "name": "Workplace Accommodation",
+            "description": "Workplace modifications, accessibility, and support for disabled employees",
+            "examples": [
+                "Physical workplace adaptation",
+                "Flexible working",
+                "Assistive technology provision",
+                "Support workers",
+                "Accessibility planning"
+            ]
+        },
+        {
+            "id": "career_development",
+            "name": "Career Development",
+            "description": "Career progression, advancement, and professional development pathways",
+            "examples": [
+                "Mentorship programs",
+                "Leadership development",
+                "Promotion pathways",
+                "Skills advancement",
+                "Professional networks"
+            ]
+        }
+    ]
+}
