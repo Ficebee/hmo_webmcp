@@ -7,7 +7,7 @@ let categoriesData = null;
 
 // Configuration
 const CONFIG = {
-    featuredEntityLimit: 8,
+    featuredEntityLimit: 7,
     attributionItemsToShow: 12,
     beehiveDemoDisclosure: 'Challenge demo metadata only; not a real commercial/provider relationship claim.',
 };
@@ -136,16 +136,9 @@ function createEntityCard(entity) {
  * Select featured entities for the homepage
  */
 function selectFeaturedEntities() {
-    // Prioritize demo Beehive examples, then add notable ones.
-    // Missing Beehive fields mean no public demo label is shown.
-    const selected = entitiesData.entities.filter(e => e.beehiveProviderStatus === 'selected');
-    const other = entitiesData.entities.filter(e => e.beehiveProviderStatus !== 'selected');
-
-    // Mix them for variety
-    const featured = [...selected, ...other].slice(0, CONFIG.featuredEntityLimit);
-
-    // Shuffle to show variety
-    return featured.sort(() => 0.5 - Math.random()).slice(0, CONFIG.featuredEntityLimit);
+    return entitiesData.entities
+        .filter(entity => entity.contributionAreas.includes('Inclusive Employment'))
+        .slice(0, CONFIG.featuredEntityLimit);
 }
 
 /**
