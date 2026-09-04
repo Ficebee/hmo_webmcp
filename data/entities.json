@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "topic": "Different Abilities, Shared Contributions",
+        "topic": "Diverse Abilities, Meaningful Contributions",
         "totalEntities": 12,
         "lastUpdated": "2026-09-02",
         "dataSource": "Public sources and official websites",
@@ -14,37 +14,37 @@
             "entityType": "organisation",
             "country": "Global",
             "website": "https://www.accenture.com/us-en/careers/inclusive-careers",
-            "description": "Global professional services company with comprehensive disability inclusion and hiring program, supporting neurodivergent and disabled employees across multiple markets.",
+            "description": "Global professional services company with published accessibility and employment policies for persons with disabilities and employees with disabilities.",
             "contributionAreas": [
                 "Inclusive Employment",
                 "Technology & Innovation",
                 "Workplace Accommodation",
                 "Career Development"
             ],
-            "selectionRationale": "Selected because Accenture demonstrates sustained commitment to inclusive employment at scale, employing thousands of people with disabilities and actively building accessible technology solutions.",
-            "contributionSummary": "Operates global disability hiring programs, provides workplace accommodations and assistive technology, and develops inclusive business practices. Employs over 3% of workforce with disabilities and partners on accessibility solutions.",
-            "insights": "Notable for demonstrating that disability inclusion is compatible with high-performance technical work and for embedding accessibility into product design across enterprise consulting.",
+            "selectionRationale": "Selected because Accenture publicly describes equal employment opportunity for persons with disabilities, workplace accommodations, accessibility centres, and disability inclusion within its workforce reporting.",
+            "contributionSummary": "Provides reasonable accommodations, accessibility policies, employee support for persons with disabilities, and public workforce reporting that includes people who self-identify as persons with disabilities.",
+            "insights": "Notable for showing how a global professional services company can connect disability inclusion, accessibility practice, workforce reporting, and technology-enabled workplace support.",
             "perspectives": [
                 "Employer perspective",
-                "Disabled employees",
+                "Persons with disabilities",
                 "Workplace innovation",
                 "Corporate social responsibility"
             ],
             "evidence": [
                 {
-                    "sourceTitle": "Accenture Careers — Inclusive Careers",
-                    "sourceUrl": "https://www.accenture.com/us-en/careers/inclusive-careers",
+                    "sourceTitle": "Accenture Employment Statements",
+                    "sourceUrl": "https://www.accenture.com/us-en/careers/support/employment-statements",
                     "sourceType": "website",
-                    "description": "Official program description of Accenture's comprehensive approach to recruiting, retaining and developing employees with disabilities.",
-                    "date": "2024",
+                    "description": "Official statement covering equal employment opportunity and accommodations for persons with disabilities.",
+                    "date": "2026",
                     "confidence": "high"
                 },
                 {
-                    "sourceTitle": "Accenture Accessibility and Inclusive Design",
-                    "sourceUrl": "https://www.accenture.com/us-en/about/corporate-citizenship/accessibility",
+                    "sourceTitle": "Accenture Accessibility Statement",
+                    "sourceUrl": "https://www.accenture.com/en/support/accessibility-statement",
                     "sourceType": "website",
-                    "description": "Describes Accenture's commitment to accessibility in technology products and services.",
-                    "date": "2024",
+                    "description": "Describes Accenture's accessibility approach and support for persons with disabilities.",
+                    "date": "2026",
                     "confidence": "high"
                 }
             ],
@@ -63,16 +63,16 @@
             "entityType": "organisation",
             "country": "Global",
             "website": "https://careers.microsoft.com/us/en/programs/diverse-talent",
-            "description": "Technology giant with formal disability hiring program and accessibility research division, focusing on employment pathways and assistive technology innovation.",
+            "description": "Technology company with accessible hiring, workplace accessibility, neurodiversity hiring, and supported employment resources for candidates and employees with disabilities.",
             "contributionAreas": [
                 "Inclusive Employment",
                 "Technology & Innovation",
                 "Assistive Technology",
                 "Research & Evidence"
             ],
-            "selectionRationale": "Selected for demonstrating that technology sector participation is achievable for disabled professionals and for active research into accessibility solutions that benefit broader society.",
-            "contributionSummary": "Operates a formal autism hiring program and disability hiring initiatives. Conducts research in assistive technology and collaborates with disability organizations on product accessibility.",
-            "insights": "Demonstrates that specific neurodiversity-focused hiring (e.g., autism hiring) can create meaningful employment pathways while generating innovation benefits for the broader organization.",
+            "selectionRationale": "Selected for demonstrating accessible hiring pathways, workplace accessibility resources, neurodiversity hiring, and supported employment approaches in a major technology workplace.",
+            "contributionSummary": "Offers accessible hiring support, a Neurodiversity Program, Supported Employment resources, workplace accommodations, accessibility resources, and research into technologies for people with disabilities.",
+            "insights": "Demonstrates that accessible hiring and neurodiversity-focused pathways can support meaningful technology-sector employment while informing broader accessibility innovation.",
             "perspectives": [
                 "Employer innovation",
                 "Neurodivergent employees",
@@ -81,19 +81,19 @@
             ],
             "evidence": [
                 {
-                    "sourceTitle": "Microsoft Careers — Diverse Talent Programs",
-                    "sourceUrl": "https://careers.microsoft.com/us/en/programs/diverse-talent",
+                    "sourceTitle": "Microsoft Accessibility — Accessible Hiring",
+                    "sourceUrl": "https://www.microsoft.com/en-us/accessibility/hiring",
                     "sourceType": "website",
-                    "description": "Overview of Microsoft's formal disability and neurodiversity hiring programs.",
-                    "date": "2024",
+                    "description": "Official Microsoft page covering accessible hiring, neurodiversity hiring, supported employment, and accommodations for candidates with disabilities.",
+                    "date": "2026",
                     "confidence": "high"
                 },
                 {
-                    "sourceTitle": "Microsoft Accessibility Research Center",
-                    "sourceUrl": "https://www.microsoft.com/en-us/research/group/ability/",
-                    "sourceType": "research",
-                    "description": "Research group focused on developing technologies that enable people with disabilities.",
-                    "date": "2024",
+                    "sourceTitle": "Microsoft Accessibility — Workplace Accessibility",
+                    "sourceUrl": "https://www.microsoft.com/en-us/accessibility/working-at-microsoft",
+                    "sourceType": "website",
+                    "description": "Official Microsoft page describing support, accommodations, community, and opportunities for employees with disabilities and neurodivergent employees.",
+                    "date": "2026",
                     "confidence": "high"
                 }
             ],
@@ -112,7 +112,7 @@
             "entityType": "organisation",
             "country": "United Kingdom",
             "website": "https://www.leonardcheshire.org/",
-            "description": "UK-based disability organisation operating independent living schemes, employment programmes, and supporting disabled people across multiple life domains.",
+            "description": "UK-based disability organisation providing care, accommodation, information, guidance, employment support, and campaigning for disabled people.",
             "contributionAreas": [
                 "Inclusive Employment",
                 "Community Integration",
@@ -120,7 +120,7 @@
                 "Independent Living"
             ],
             "selectionRationale": "Selected for demonstrating holistic support for disabled people including employment, housing and community participation, with evidence-based programmes.",
-            "contributionSummary": "Operates residential and support services, employment training programmes, and advocacy work. Supports disabled people to live independently and participate in society.",
+            "contributionSummary": "Provides care and accommodation, employment support, information and guidance, and campaigns to remove barriers disabled people face in work and wider life.",
             "insights": "Demonstrates that meaningful contribution requires integrated support across employment, housing, and community life—not employment alone.",
             "perspectives": [
                 "Lived experience of disabled people",
@@ -130,19 +130,19 @@
             ],
             "evidence": [
                 {
-                    "sourceTitle": "Leonard Cheshire — About Us",
-                    "sourceUrl": "https://www.leonardcheshire.org/",
+                    "sourceTitle": "Leonard Cheshire — Get Support",
+                    "sourceUrl": "https://leonardcheshire.org/get-support",
                     "sourceType": "website",
-                    "description": "Organisation homepage with overview of services and programmes.",
-                    "date": "2024",
+                    "description": "Official page describing care and accommodation, information and guidance, and employment support.",
+                    "date": "2026",
                     "confidence": "high"
                 },
                 {
-                    "sourceTitle": "Leonard Cheshire Employment Services",
-                    "sourceUrl": "https://www.leonardcheshire.org/support-and-services/employment",
+                    "sourceTitle": "Leonard Cheshire — Employment",
+                    "sourceUrl": "https://leonardcheshire.org/get-involved/campaign-us/employment",
                     "sourceType": "website",
-                    "description": "Details of employment training and support programmes.",
-                    "date": "2024",
+                    "description": "Campaign page describing barriers disabled people face in work and calls for employment support.",
+                    "date": "2026",
                     "confidence": "high"
                 }
             ],
@@ -164,22 +164,22 @@
         },
         {
             "id": "org_004_sense",
-            "name": "Sense — Deaf-Blind Organisation",
+            "name": "Sense — Complex Disabilities",
             "entityType": "organisation",
             "country": "United Kingdom",
             "website": "https://www.sense.org.uk/",
-            "description": "UK-based organisation supporting deaf-blind and multi-sensory disabled people, providing specialist services including communication support and specialist advice.",
+            "description": "UK-based organisation supporting disabled people with complex needs, including people who are deafblind or have multi-sensory impairment.",
             "contributionAreas": [
                 "Community Integration",
                 "Advocacy & Policy",
                 "Education & Training",
                 "Technology & Innovation"
             ],
-            "selectionRationale": "Selected for demonstrating specialised support for complex disabilities and for leading voice in inclusive communication and accessibility innovation.",
-            "contributionSummary": "Provides communication support, residential services, advocacy for deaf-blind people, and expertise in accessible technology design.",
-            "insights": "Shows that meaningful inclusion sometimes requires specialized expertise and support, and that organizations led by disabled people's voices develop more effective solutions.",
+            "selectionRationale": "Selected for demonstrating specialised support for disabled people with complex needs and for work on communication, independence, community life, arts, sports, and wellbeing.",
+            "contributionSummary": "Provides personalised support, communicator guides, supported living, education, arts, sports, wellbeing activities, and advocacy alongside disabled people with complex needs.",
+            "insights": "Shows that meaningful inclusion sometimes requires personalised communication support, flexible services, and work alongside disabled people with complex needs.",
             "perspectives": [
-                "Lived experience — deaf-blind individuals",
+                "Disabled people with complex needs",
                 "Specialist service perspective",
                 "Communication & accessibility",
                 "Advocacy voice"
@@ -187,18 +187,18 @@
             "evidence": [
                 {
                     "sourceTitle": "Sense — About Us",
-                    "sourceUrl": "https://www.sense.org.uk/",
+                    "sourceUrl": "https://www.sense.org.uk/about-us/",
                     "sourceType": "website",
-                    "description": "Organisation overview and core mission.",
-                    "date": "2024",
+                    "description": "Official page describing Sense's work with disabled people with complex needs.",
+                    "date": "2026",
                     "confidence": "high"
                 },
                 {
-                    "sourceTitle": "Sense Communication Skills",
-                    "sourceUrl": "https://www.sense.org.uk/get-support/communication-guide/",
+                    "sourceTitle": "Sense — Community Support",
+                    "sourceUrl": "https://www.sense.org.uk/our-services/support-for-adults/community-support/",
                     "sourceType": "website",
-                    "description": "Specialist communication resources and support for deaf-blind people.",
-                    "date": "2024",
+                    "description": "Official page describing community support and communicator guides for disabled people with complex needs.",
+                    "date": "2026",
                     "confidence": "high"
                 }
             ],
@@ -211,7 +211,7 @@
             ],
             "lastReviewed": "2026-09-02",
             "tags": [
-                "deaf-blind",
+                "deafblind",
                 "uk",
                 "specialist",
                 "communication",
@@ -231,8 +231,8 @@
                 "Technology & Innovation",
                 "Advocacy & Policy"
             ],
-            "selectionRationale": "Selected for long-standing leadership in accessibility innovation, employment training, and advancing technology standards that benefit all users.",
-            "contributionSummary": "Operates employment training services, develops accessible technology solutions, provides educational resources, and leads advocacy for accessibility standards.",
+            "selectionRationale": "Selected for long-standing leadership in employment evidence, technology access, public attitudes, and advocacy for blind and partially sighted people.",
+            "contributionSummary": "Provides advice, campaigns, research, employer resources, and technology evidence focused on barriers and opportunities for blind and partially sighted people.",
             "insights": "Demonstrates that accessibility innovation benefits broader society—technologies designed for blind users often improve usability for all.",
             "perspectives": [
                 "Blind and partially sighted people",
@@ -242,18 +242,18 @@
             ],
             "evidence": [
                 {
-                    "sourceTitle": "RNIB — Home",
-                    "sourceUrl": "https://www.rnib.org.uk/",
-                    "sourceType": "website",
-                    "description": "Organisation homepage with services and programmes overview.",
-                    "date": "2024",
+                    "sourceTitle": "RNIB — Employment for Blind and Partially Sighted People in 2019",
+                    "sourceUrl": "https://www.rnib.org.uk/professionals/research-and-data/reports-and-insight/employment-for-blind-and-partially-sighted-people-in-2019/",
+                    "sourceType": "research",
+                    "description": "RNIB research on employment circumstances and barriers for blind and partially sighted people.",
+                    "date": "2020",
                     "confidence": "high"
                 },
                 {
-                    "sourceTitle": "RNIB — Employment Services",
-                    "sourceUrl": "https://www.rnib.org.uk/information-advice-and-support/employment",
-                    "sourceType": "website",
-                    "description": "Employment training and support programmes.",
+                    "sourceTitle": "RNIB — Sight Loss and Technology",
+                    "sourceUrl": "https://www.rnib.org.uk/professionals/research-and-data/reports-and-insight/sight-loss-and-technology/",
+                    "sourceType": "research",
+                    "description": "RNIB report on technology, inclusion, independence, and digital barriers for blind and partially sighted people.",
                     "date": "2024",
                     "confidence": "high"
                 }
@@ -267,7 +267,7 @@
             ],
             "lastReviewed": "2026-09-02",
             "tags": [
-                "visual disability",
+                "sight loss",
                 "uk",
                 "employment",
                 "technology",
@@ -287,9 +287,9 @@
                 "Education & Training",
                 "Employment"
             ],
-            "selectionRationale": "Selected for demonstrating that disabled people's leadership in research produces more relevant, applicable insights and for building evidence base for effective inclusion.",
+            "selectionRationale": "Selected for demonstrating that autistic people's participation in research, employment planning, and co-produced support can produce more relevant evidence for inclusion.",
             "contributionSummary": "Conducts research led by autistic people, provides evidence on effective workplace accommodations and education approaches, and advocates for autistic-led policy.",
-            "insights": "Shows the value of centering disabled people's knowledge and lived experience in research and policymaking rather than treating them as subjects of study.",
+            "insights": "Shows the value of centering autistic people's knowledge and lived experience in research, employment support, and policymaking rather than treating them only as subjects of study.",
             "perspectives": [
                 "Autistic people's voice",
                 "Research leadership",
@@ -298,19 +298,19 @@
             ],
             "evidence": [
                 {
-                    "sourceTitle": "Autistica — About Us",
-                    "sourceUrl": "https://www.autistica.org.uk/",
+                    "sourceTitle": "Autistica — Our Work on Employment",
+                    "sourceUrl": "https://www.autistica.org.uk/get-involved/employers/our-work-on-employment",
                     "sourceType": "website",
-                    "description": "Organisation mission and research overview.",
-                    "date": "2024",
+                    "description": "Official page describing Autistica's employment research, employer work, and goal to double the employment rate for autistic people.",
+                    "date": "2026",
                     "confidence": "high"
                 },
                 {
-                    "sourceTitle": "Autistica Research",
-                    "sourceUrl": "https://www.autistica.org.uk/what-we-do/research",
+                    "sourceTitle": "Autistica — Employment Readiness Programme",
+                    "sourceUrl": "https://www.autistica.org.uk/our-research/research-projects/employment-readiness",
                     "sourceType": "research",
-                    "description": "Portfolio of research projects led by autistic researchers.",
-                    "date": "2024",
+                    "description": "Research project describing an employment readiness programme co-produced with autistic people, families, employers, and education providers.",
+                    "date": "2025",
                     "confidence": "high"
                 }
             ],
@@ -329,7 +329,7 @@
             "entityType": "organisation",
             "country": "Global",
             "website": "https://www.thevaluable500.com/",
-            "description": "Global movement of business leaders committed to disability inclusion in the workplace, with participating companies representing over $3 trillion in annual revenue.",
+            "description": "Global business collective focused on disability inclusion in business, with hundreds of major organisations making public commitments.",
             "contributionAreas": [
                 "Inclusive Employment",
                 "Workplace Accommodation",
@@ -337,7 +337,7 @@
                 "Advocacy & Policy"
             ],
             "selectionRationale": "Selected for mobilising corporate leadership around disability inclusion and demonstrating business case for diversity at scale.",
-            "contributionSummary": "Convenes 500+ business leaders across sectors and geographies to advance disability inclusion in workforce, procurement, and products. Shares best practices and holds members accountable.",
+            "contributionSummary": "Convenes major organisations to put disability inclusion on the business agenda and advance disability inclusion across business practice.",
             "insights": "Demonstrates that disability inclusion is increasingly recognized as a business imperative by mainstream corporate leadership, not just a social responsibility.",
             "perspectives": [
                 "Corporate leadership",
@@ -347,11 +347,11 @@
             ],
             "evidence": [
                 {
-                    "sourceTitle": "The Valuable 500 — About",
-                    "sourceUrl": "https://www.thevaluable500.com/",
-                    "sourceType": "website",
-                    "description": "Global movement overview and commitment.",
-                    "date": "2024",
+                    "sourceTitle": "The Valuable 500 — 500 CEOs announcement",
+                    "sourceUrl": "https://www.prnewswire.com/in/news-releases/500-ceos-of-major-organisations-create-the-world-s-biggest-community-for-disability-business-inclusion-the-valuable-500-816114655.html",
+                    "sourceType": "article",
+                    "description": "Announcement describing The Valuable 500 as a global CEO collective for disability business inclusion.",
+                    "date": "2021",
                     "confidence": "high"
                 }
             ],
@@ -366,33 +366,33 @@
         },
         {
             "id": "org_008_remploy",
-            "name": "Remploy — Supported Employment",
+            "name": "Maximus UK — Employment and Skills",
             "entityType": "organisation",
             "country": "United Kingdom",
             "website": "https://www.remploy.co.uk/",
-            "description": "UK provider of employment services and supported employment programmes specifically designed to help disabled people secure and maintain work.",
+            "description": "UK employment and skills provider whose Remploy URL now redirects to Maximus UK employment services, including support for people with disabilities, long-term health conditions, and barriers to work.",
             "contributionAreas": [
                 "Inclusive Employment",
                 "Career Development",
                 "Workplace Accommodation",
                 "Training & Skills"
             ],
-            "selectionRationale": "Selected for demonstrating practical supported employment models that enable disabled people to compete in open labour market with appropriate support.",
-            "contributionSummary": "Provides job matching, workplace support, skills training, and ongoing employment coaching for disabled people. Works with employers to create sustainable inclusive workplaces.",
-            "insights": "Shows that high-quality employment support enables disabled people to contribute in competitive employment, not just segregated or subsidised work.",
+            "selectionRationale": "Selected for demonstrating practical employment and skills programmes that support people with disabilities, long-term health conditions, and other barriers to work.",
+            "contributionSummary": "Provides tailored employment support, skills and qualifications programmes, workplace mental health support, and Access to Work-related services.",
+            "insights": "Shows how employability support can combine job search help, skills development, workplace adjustments, and health-related support to help people find and remain in work.",
             "perspectives": [
-                "Disabled job seekers",
+                "People with disabilities",
                 "Employer perspective",
                 "Employment support professional",
                 "Workforce development"
             ],
             "evidence": [
                 {
-                    "sourceTitle": "Remploy — About Us",
+                    "sourceTitle": "Maximus UK — Employment and Skills",
                     "sourceUrl": "https://www.remploy.co.uk/",
                     "sourceType": "website",
-                    "description": "Employment services overview and approach.",
-                    "date": "2024",
+                    "description": "Current public page reached from the Remploy URL, describing employment and skills programmes including support for people with disabilities, long-term health conditions, and barriers to work.",
+                    "date": "2026",
                     "confidence": "high"
                 }
             ],
@@ -414,33 +414,33 @@
         },
         {
             "id": "org_009_inclusive_arts",
-            "name": "Inclusive Arts Collective",
+            "name": "Inclusive Arts Collective CIC",
             "entityType": "initiative",
-            "country": "Global",
-            "website": "https://www.inclusiveartsscene.org/",
-            "description": "Global movement supporting disabled artists and creatives, demonstrating artistic contribution, leadership, and cultural participation.",
+            "country": "United Kingdom",
+            "website": "https://www.inclusiveartscollective.org/",
+            "description": "UK community interest company creating neurodivergent-led arts programmes for children and young people through movement, visual arts, performance, and sensory expression.",
             "contributionAreas": [
                 "Arts & Culture",
                 "Community Integration",
                 "Creative Expression",
                 "Advocacy & Policy"
             ],
-            "selectionRationale": "Selected for highlighting artistic and cultural contribution of disabled people and challenging stereotypes of disability as non-creative.",
-            "contributionSummary": "Supports disabled artists in creating and exhibiting work, advocates for disability representation in arts, and builds platforms for disabled creative leadership.",
-            "insights": "Demonstrates that cultural participation and artistic contribution are essential dimensions of full community participation, not optional extras.",
+            "selectionRationale": "Selected for showing how neurodivergent-led creative programmes can support confidence, self-expression, belonging, and public understanding of neurodivergence.",
+            "contributionSummary": "Creates workshops, exhibitions, films, and sensory-based arts programmes co-designed or led with neurodivergent artists and educators.",
+            "insights": "Demonstrates that creative expression, sensory exploration, and cultural participation are meaningful contribution pathways for neurodivergent and marginalised young people.",
             "perspectives": [
-                "Disabled artists",
+                "Neurodivergent artists",
                 "Cultural institutions",
-                "Audiences",
-                "Creative economy"
+                "Children and young people",
+                "Creative wellbeing"
             ],
             "evidence": [
                 {
-                    "sourceTitle": "Inclusive Arts Scene",
-                    "sourceUrl": "https://www.inclusiveartsscene.org/",
+                    "sourceTitle": "Inclusive Arts Collective",
+                    "sourceUrl": "https://www.inclusiveartscollective.org/",
                     "sourceType": "website",
-                    "description": "Directory and network of inclusive arts initiatives globally.",
-                    "date": "2024",
+                    "description": "Official site describing neurodivergent-led arts programmes, co-designed workshops, and creative projects.",
+                    "date": "2026",
                     "confidence": "high"
                 }
             ],
@@ -448,8 +448,9 @@
             "tags": [
                 "arts",
                 "culture",
-                "global",
+                "uk",
                 "creative",
+                "neurodivergent",
                 "participation"
             ]
         },
@@ -459,18 +460,18 @@
             "entityType": "institution",
             "country": "Global",
             "website": "https://www.paralympic.org/",
-            "description": "Global governance body for Paralympic movement, demonstrating athletic excellence, international competition, and sports participation by disabled athletes.",
+            "description": "Global governance body for the Paralympic Movement, demonstrating athletic excellence, international competition, and sports participation by Para athletes.",
             "contributionAreas": [
                 "Sports & Recreation",
                 "Excellence & Achievement",
                 "Community Integration",
                 "Policy & Leadership"
             ],
-            "selectionRationale": "Selected for establishing competitive sports pathways that demonstrate excellence and capability of disabled athletes at world-class level.",
-            "contributionSummary": "Organizes Paralympic Games, sets global standards for disability sports, supports national paralympic committees, and advocates for athlete rights and inclusion.",
-            "insights": "Demonstrates that disabled people's athletic excellence is comparable to non-disabled athletes and that competitive sport is a legitimate pathway for contribution and achievement.",
+            "selectionRationale": "Selected for establishing competitive Para sport pathways that demonstrate excellence and capability at world-class level.",
+            "contributionSummary": "Organizes the Paralympic Games, supports the Paralympic Movement, sets classification standards for Para sport, and promotes social inclusion through sport.",
+            "insights": "Demonstrates that Para athletes' excellence and achievement are legitimate pathways for contribution, visibility, and social inclusion.",
             "perspectives": [
-                "Disabled athletes",
+                "Para athletes",
                 "Sports administrators",
                 "Global community",
                 "Policy perspective"
@@ -481,7 +482,15 @@
                     "sourceUrl": "https://www.paralympic.org/",
                     "sourceType": "institution",
                     "description": "Official Paralympic governance and information.",
-                    "date": "2024",
+                    "date": "2026",
+                    "confidence": "high"
+                },
+                {
+                    "sourceTitle": "IPC Guide to Para and IPC Terminology",
+                    "sourceUrl": "https://www.readkong.com/page/ipc-guide-to-para-and-ipc-terminology-august-2021-4220618",
+                    "sourceType": "institution",
+                    "description": "IPC terminology guidance recommending Para athlete or athlete/person with disability instead of disabled athlete.",
+                    "date": "2021",
                     "confidence": "high"
                 }
             ],
@@ -495,53 +504,60 @@
             ]
         },
         {
-            "id": "org_011_empleyartech",
-            "name": "EmpleYarTech",
+            "id": "org_011_incluyeme",
+            "name": "Incluyeme.com",
             "entityType": "initiative",
             "country": "Latin America",
-            "website": "https://empleyartech.org/",
-            "description": "Latin American platform connecting disabled people with technology sector opportunities through training, mentorship, and job placement.",
+            "website": "https://www.incluyeme.com/",
+            "description": "Latin American social enterprise promoting socio-labour inclusion of people with disabilities through employability programmes and support for organisations.",
             "contributionAreas": [
                 "Inclusive Employment",
                 "Technology & Innovation",
                 "Education & Training",
                 "Career Development"
             ],
-            "selectionRationale": "Selected for demonstrating technology sector inclusion in emerging economy context and for developing innovative training pathways for disabled professionals.",
-            "contributionSummary": "Provides technology skills training, mentorship from tech professionals, and employment pathways in growing tech sector across Latin America.",
-            "insights": "Shows that inclusive employment in high-growth sectors like technology is achievable globally, not only in wealthy economies, with appropriate support structures.",
+            "selectionRationale": "Selected for its public work on socio-labour inclusion of people with disabilities across Latin America, including employability, training, inclusive hiring, and employer support.",
+            "contributionSummary": "Connects people with disabilities to job opportunities, offers training, and supports companies with inclusive hiring, consulting, and diversity strategies.",
+            "insights": "Shows that inclusive employment can be built through regional ecosystems that work with both people with disabilities and employers.",
             "perspectives": [
-                "Disabled job seekers in emerging markets",
-                "Technology sector perspective",
+                "People with disabilities seeking work",
+                "Inclusive recruitment",
                 "Training provider view",
                 "Economic development"
             ],
             "evidence": [
                 {
-                    "sourceTitle": "EmpleYarTech",
-                    "sourceUrl": "https://empleyartech.org/",
+                    "sourceTitle": "Incluyeme.com — About Us",
+                    "sourceUrl": "https://www.incluyeme.com/about-us/",
                     "sourceType": "website",
-                    "description": "Platform overview and programme details.",
-                    "date": "2024",
+                    "description": "Official page describing socio-labour inclusion of people with disabilities and employability work.",
+                    "date": "2026",
+                    "confidence": "high"
+                },
+                {
+                    "sourceTitle": "Incluyeme.com — Work for People with Disabilities",
+                    "sourceUrl": "https://www.incluyeme.com/busco-trabajo/",
+                    "sourceType": "website",
+                    "description": "Official page describing job opportunities, training, and partner companies for people with disabilities.",
+                    "date": "2026",
                     "confidence": "high"
                 }
             ],
             "lastReviewed": "2026-09-02",
             "tags": [
                 "employment",
-                "technology",
                 "latin-america",
-                "emerging-market",
+                "people-with-disabilities",
                 "training"
             ]
         },
         {
             "id": "org_012_scope",
-            "name": "Scope — Cerebral Palsy Equality",
+            "name": "Scope — Disability Equality",
             "entityType": "organisation",
             "country": "United Kingdom",
             "website": "https://www.scope.org.uk/",
-            "description": "UK equality and rights organisation for disabled people, specifically those with cerebral palsy and other physical disabilities, campaigning for equality and inclusion.",
+            "description": "UK disability equality charity campaigning for an equal future with disabled people.",
             "contributionAreas": [
                 "Advocacy & Policy",
                 "Community Integration",
@@ -560,18 +576,18 @@
             "evidence": [
                 {
                     "sourceTitle": "Scope — About Us",
-                    "sourceUrl": "https://www.scope.org.uk/",
+                    "sourceUrl": "https://www.scope.org.uk/about-us",
                     "sourceType": "website",
-                    "description": "Organisation mission and campaigns.",
-                    "date": "2024",
+                    "description": "Official page describing Scope's mission to create an equal future with disabled people.",
+                    "date": "2026",
                     "confidence": "high"
                 },
                 {
-                    "sourceTitle": "Scope — Campaigns",
-                    "sourceUrl": "https://www.scope.org.uk/campaigns/",
+                    "sourceTitle": "Scope — How We Speak About Disability",
+                    "sourceUrl": "https://www.scope.org.uk/about-us/accessibility-at-scope/accessibility-guidelines/how-we-speak-about-disability",
                     "sourceType": "website",
-                    "description": "Ongoing policy and systemic change campaigns.",
-                    "date": "2024",
+                    "description": "Scope language guidance explaining its use of social-model language such as disabled people.",
+                    "date": "2026",
                     "confidence": "high"
                 }
             ],

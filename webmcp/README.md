@@ -31,6 +31,8 @@ The webpage at `app/index.html` registers tools from `app/script.js` when `docum
 - `explore_evidence`: return public evidence sources for an entity, claim, or topic.
 - `identify_gaps`: identify visible gaps and limitations in the public challenge dataset.
 
+`discover_selected` is the HMO.InnerVoice equivalent of a generic catalog-search tool. The challenge dataset is not a product catalog; it represents editorially selected public demo organisations, perspectives, contribution areas and evidence. For that reason, the recorded WebMCP demo intentionally shows six primary tools and uses the domain-native `discover_selected` name instead of `search_products`.
+
 ## Stdio Compatibility Server
 
 This directory also contains a stdio MCP compatibility server in `webmcp/server.js`. It reuses the same public data and helper logic for local agent/client experiments.

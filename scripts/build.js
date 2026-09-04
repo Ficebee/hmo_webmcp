@@ -15,6 +15,8 @@ const requiredFiles = [
     'data/contribution-categories.json',
     'data/DATA_MODEL.md',
     'README.md',
+    'LICENSE',
+    'NOTICE',
     'webmcp/README.md',
     'webmcp/AGENT_INTEGRATION.md',
 ];
@@ -39,6 +41,8 @@ copyDir(path.join(ROOT, 'webmcp'), path.join(DIST, 'webmcp'), file =>
     file.endsWith('.md') || file.endsWith('.js')
 );
 fs.copyFileSync(path.join(ROOT, 'README.md'), path.join(DIST, 'README.md'));
+fs.copyFileSync(path.join(ROOT, 'LICENSE'), path.join(DIST, 'LICENSE'));
+fs.copyFileSync(path.join(ROOT, 'NOTICE'), path.join(DIST, 'NOTICE'));
 
 console.log(`Built HMO.InnerVoice WebMCP site at ${DIST}`);
 

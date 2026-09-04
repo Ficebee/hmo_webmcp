@@ -24,7 +24,7 @@ Current access status: private owner testing. Make the site public only when rea
 
 User action: Select an organisation other than the first/default organisation, for example "Microsoft - Disability Hiring Initiative".
 
-Prompt: "Explain this organisation in simpler terms."
+Prompt: "Tell me about this organisation."
 
 Expected result:
 
@@ -37,7 +37,7 @@ Why this matters: This proves WebMCP can work with the human user's current webp
 
 Suggested follow-up prompts:
 
-- "Why is Microsoft's approach significant?"
+- "Why is Microsoft selected?"
 - "How does this help neurodivergent people?"
 - "What can employers learn from this?"
 

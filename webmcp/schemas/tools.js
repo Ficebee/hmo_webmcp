@@ -71,7 +71,7 @@ export const TOOL_SCHEMAS = {
 
     EXPLORE_PERSPECTIVES: {
         name: "explore_perspectives",
-        description: "Surface different perspectives on a social issue from various stakeholders. Returns viewpoints from perspectives such as: disabled people with lived experience, employers, educators, researchers, service providers, policymakers, and advocacy organisations. Helps understand the multi-stakeholder nature of social issues.",
+        description: "Surface different perspectives on a social issue from various stakeholders. Returns viewpoints from perspectives such as: people with disabilities, autistic people, neurodivergent people, employers, educators, researchers, service providers, policymakers, and advocacy organisations. Helps understand the multi-stakeholder nature of social issues.",
         inputSchema: {
             type: "object",
             properties: {
@@ -97,7 +97,7 @@ export const TOOL_SCHEMAS = {
             properties: {
                 query: {
                     type: "string",
-                    description: "The claim or topic to find evidence for (e.g., 'Accenture employs disabled people', 'technology improves accessibility')",
+                    description: "The claim or topic to find evidence for (e.g., 'Accenture accessibility accommodations', 'technology improves accessibility')",
                 },
                 entityId: {
                     type: "string",

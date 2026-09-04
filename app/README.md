@@ -6,7 +6,7 @@ Official website: https://hmoinnervoice.com
 
 ## Purpose
 
-The page presents the public challenge topic **Different Abilities, Shared Contributions** and registers browser-native WebMCP tools for an AI agent when opened in a WebMCP-capable in-app browser.
+The page presents the public challenge topic **Diverse Abilities, Meaningful Contributions** and registers browser-native WebMCP tools for an AI agent when opened in a WebMCP-capable in-app browser.
 
 ## Browser WebMCP Path
 

@@ -14,6 +14,8 @@ Added or expanded for the challenge:
 - Demo disclosures clarifying that Beehive labels are illustrative challenge metadata only.
 - Static build and ChatGPT Sites deployment path.
 
+Dataset note: The challenge dataset is based on publicly accessible sources and has been reviewed for public-source alignment, but it has not been exhaustively verified for the purposes of the Challenge. It should be treated as a public demo dataset, not a comprehensive or independently audited knowledge base.
+
 ## Existing HMO.InnerVoice Context
 
 HMO.InnerVoice existed before this WebMCP challenge as an awareness and advocacy platform. Its broader direction includes human voice, awareness, social issues, understanding, perspectives, evidence, wellbeing, inclusivity, sustainability, ethical living and positive social change.

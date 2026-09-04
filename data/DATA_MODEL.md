@@ -65,11 +65,31 @@ Sources are tracked with:
 - `date`: Publication/access date when available
 - `confidence`: How confident we are in this information (high/medium/low)
 
+This challenge dataset is based on publicly accessible sources and has been
+reviewed for public-source alignment, but it has not been exhaustively verified
+for the purposes of the Challenge. It should be treated as a public demo dataset,
+not a comprehensive or independently audited knowledge base.
+
+## Terminology Principle
+
+Organisation-specific descriptions should follow the language used by the cited
+organisation or public source. HMO.InnerVoice editorial framing should use
+established terminology according to context:
+
+- `persons with disabilities` or `people with disabilities` when discussing disability;
+- `autistic people` or `people with autism` according to context and stated preference;
+- `neurodivergent people` when discussing neurodiversity;
+- `people with diverse abilities` when referring to the broader editorial theme.
+
+Source-specific terms such as `disabled people`, `blind and partially sighted
+people`, `disabled people with complex needs`, or `Para athletes` may be used
+when they match the cited organisation's terminology.
+
 ## MVP Scope
 
 The MVP curates approximately 8-15 organisations/institutions focused on:
 
-**"Different Abilities, Shared Contributions"**
+**"Diverse Abilities, Meaningful Contributions"**
 
 Selection criteria:
 1. Demonstrated work in inclusive contribution, participation, and capability

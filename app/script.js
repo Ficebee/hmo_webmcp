@@ -339,7 +339,7 @@ function updateSelectedEntityUI() {
  * Utility: Log version info
  */
 console.log('HMO.InnerVoice Frontend Loaded');
-console.log('Topic: Different Abilities, Shared Contributions');
+console.log('Topic: Diverse Abilities, Meaningful Contributions');
 console.log('Access WebMCP capabilities through: document.modelContext.registerTool()');
 
 /**
@@ -453,7 +453,7 @@ async function registerWebMcpTools() {
                 additionalProperties: false,
             },
             annotations: { readOnlyHint: true },
-            execute: async ({ topic = 'Different Abilities, Shared Contributions' } = {}) =>
+            execute: async ({ topic = 'Diverse Abilities, Meaningful Contributions' } = {}) =>
                 identifyGaps({ topic }),
         },
     ];

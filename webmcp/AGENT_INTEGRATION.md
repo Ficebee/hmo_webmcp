@@ -52,6 +52,8 @@ When the page runs inside a WebMCP-capable in-app browser, `app/script.js` calls
 ]
 ```
 
+`discover_selected` is the domain-native HMO.InnerVoice search tool. The challenge prototype is not selling products; it is helping agents discover selected public demo organisations, perspectives, contribution areas and evidence. It therefore fulfills the catalog-search purpose of a generic `search_products` example.
+
 ## Example Agent Questions
 
 - "Based on HMO.InnerVoice, who is making a difference in inclusive employment?"

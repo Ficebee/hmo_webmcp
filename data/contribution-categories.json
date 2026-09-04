@@ -3,7 +3,7 @@
         {
             "id": "inclusive_employment",
             "name": "Inclusive Employment",
-            "description": "Programmes supporting disabled people's access to, training for, and retention in employment",
+            "description": "Programmes supporting people with disabilities to access, train for, and remain in employment",
             "examples": [
                 "Job training programmes",
                 "Supported employment services",
@@ -15,7 +15,7 @@
         {
             "id": "education_training",
             "name": "Education & Training",
-            "description": "Educational pathways and skill development for disabled people",
+            "description": "Educational pathways and skill development for people with disabilities",
             "examples": [
                 "Technical skills training",
                 "Life skills development",
@@ -51,7 +51,7 @@
         {
             "id": "entrepreneurship",
             "name": "Entrepreneurship",
-            "description": "Supporting disabled people to start and run their own businesses",
+            "description": "Supporting people with disabilities to start and run their own businesses",
             "examples": [
                 "Business training",
                 "Startup support",
@@ -63,7 +63,7 @@
         {
             "id": "arts_culture",
             "name": "Arts & Culture",
-            "description": "Disabled people's participation, leadership, and contribution in arts and cultural sectors",
+            "description": "People with disabilities, autistic people, and neurodivergent people participating, leading, and contributing in arts and cultural sectors",
             "examples": [
                 "Artist development",
                 "Exhibition opportunities",
@@ -87,7 +87,7 @@
         {
             "id": "community_integration",
             "name": "Community Integration",
-            "description": "Supporting disabled people's full participation in community life",
+            "description": "Supporting people with disabilities to participate fully in community life",
             "examples": [
                 "Community activities",
                 "Social inclusion programs",
@@ -123,7 +123,7 @@
         {
             "id": "family_support",
             "name": "Family Support",
-            "description": "Support for families of disabled people across their lifecycle",
+            "description": "Support for families of people with disabilities across their lifecycle",
             "examples": [
                 "Parenting support",
                 "Family counseling",
@@ -137,7 +137,7 @@
             "name": "Social Innovation",
             "description": "Innovative approaches and new models for addressing barriers to inclusion",
             "examples": [
-                "Co-design with disabled people",
+                "Co-design with people with disabilities",
                 "Scalable solutions",
                 "Social enterprise models",
                 "Partnership innovation",
